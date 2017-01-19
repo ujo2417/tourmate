@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.NoticeBoardDTO">
+<!-- 게시판 -->
+   
+   <select id="notice_list" parameterType="map" resultType="com.to.me.dto.NoticeBoardDTO">
+   SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, R FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, ROWNUM R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM 
+               FROM noticeBOARD ORDER BY notice_NUM DESC) ORDER BY notice_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select>
+ 
+  <insert id="notice_write" parameterType="com.to.me.dto.NoticeBoardDTO">
+      INSERT INTO noticeBOARD (notice_NUM, MEM_ID, notice_TITLE, notice_CONTENT) VALUES (notice_BOARD_SEQ.NEXTVAL,#{mem_id}, #{notice_title}, #{notice_content})
+   </insert>
+   
+   <!-- 게시글 조회수 증가 -->
+   <update id="notice_upHit" parameterType="map">
+      UPDATE noticeBOARD SET notice_READCOUNT = notice_READCOUNT + 1 WHERE notice_NUM = #{notice_num}
+   </update>
+   
+    <select id="notice_content_view" parameterType="map" resultType="com.to.me.dto.NoticeBoardDTO"> 
+      SELECT notice_NUM, MEM_ID, notice_TITLE, notice_CONTENT, notice_DATE, notice_READCOUNT, 
+      notice_REPLYNUM FROM noticeBOARD WHERE notice_NUM = #{notice_num}
+   </select> 
+   
+   <!-- 댓글 출력 -->
+   <select id="notice_reply_view" parameterType="map" resultType="com.to.me.dto.Re_NoticeBoardDTO"> 
+      SELECT RE_NUM, RE_CONTENT, RE_WRITEDATE, RE_noticeNUM, MEM_ID
+      FROM noticeBOARDREPLY WHERE RE_noticeNUM = #{notice_num} ORDER BY RE_NUM DESC 
+   </select> 
+   
+   <!-- 댓글 쓰기 -->
+   <insert id="notice_reply_write">
+      INSERT INTO noticeBOARDREPLY (RE_CONTENT, RE_noticeNUM, RE_NUM, MEM_ID) VALUES (#{re_content}, #{re_noticenum}, noticeBOARDREPLY_SEQ.NEXTVAL, #{mem_id})
+   </insert>
+   
+   <!-- 댓글 갯수 +1 -->
+    <update id="notice_reply_write_num">
+      UPDATE noticeBOARD SET notice_REPLYNUM = notice_REPLYNUM + 1 WHERE notice_NUM = #{re_noticenum}
+   </update>
+ 
+ 
+  <!-- 댓글 갯수 -1 -->
+   <update id="notice_reply_delete_num">
+      UPDATE noticeBOARD SET notice_REPLYNUM = notice_REPLYNUM - 1 WHERE notice_NUM = #{notice_num}
+   </update>
+   
+	<!-- 댓글 삭제 -->
+   <delete id="notice_reply_delete">
+      DELETE FROM noticeBOARDREPLY WHERE RE_NUM = #{re_num} AND RE_noticeNUM=#{notice_num}
+   </delete>
+   
+   <!-- 게시글 삭제 -->
+    <delete id="notice_delete">
+      DELETE FROM noticeBOARD WHERE notice_NUM = #{notice_num}
+   </delete>
+   
+   <!-- 게시글 수정 -->
+   <update id="notice_modify">
+      UPDATE noticeBOARD SET notice_TITLE=#{notice_title}, notice_CONTENT= #{notice_content} WHERE notice_NUM = #{notice_num}
+   </update>   
+
+	<!-- 댓글 전부 삭제 -->
+    <delete id="notice_reply_deleteAll">
+      DELETE FROM noticeBOARDREPLY WHERE RE_noticeNUM = #{notice_num}
+   </delete>
+ 
+
+   
+   <!-- 게시글 갯수 -->
+   <select id="notice_count" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM noticeBOARD
+   </select> 
+   <!-- 게시글 검색 갯수 -->
+   <select id="notice_title_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM noticeBOARD WHERE notice_TITLE LIKE '%${notice_title}%'
+   </select> 
+   
+   <select id="notice_content_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM noticeBOARD WHERE notice_CONTENT LIKE '%${notice_content}%'
+   </select>
+   
+   <select id="notice_mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM noticeBOARD WHERE MEM_ID LIKE '%${mem_id}%'
+   </select>
+   
+    <!-- 게시글 검색 -->
+   <select id="notice_title_searchlist" parameterType="map" resultType="com.to.me.dto.NoticeBoardDTO">
+   SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, ROWNUM R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM 
+               FROM noticeBOARD WHERE notice_TITLE LIKE '%${notice_title}%' ORDER BY notice_NUM DESC) ORDER BY notice_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="notice_content_searchlist" parameterType="map" resultType="com.to.me.dto.NoticeBoardDTO">
+   SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, ROWNUM R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM 
+               FROM noticeBOARD WHERE notice_CONTENT LIKE '%${notice_content}%' ORDER BY notice_NUM DESC) ORDER BY notice_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="notice_mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.NoticeBoardDTO">
+   SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM, ROWNUM R 
+               FROM(SELECT notice_NUM, MEM_ID, notice_DATE, notice_CONTENT, notice_READCOUNT, notice_TITLE, notice_REPLYNUM 
+               FROM noticeBOARD WHERE MEM_ID LIKE '%${mem_id}%' ORDER BY notice_NUM DESC) ORDER BY notice_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+   
+   
+   <!-- 공지사항 뽑기 -->
+    <select id="notice_main1" resultType="com.to.me.dto.NoticeBoardDTO"> 
+	select * from (select notice_num, notice_title, notice_date, mem_id, notice_replynum, rownum r 
+    from (select notice_num, notice_title, notice_date, mem_id, notice_replynum 
+    from noticeboard order by notice_num desc) order by notice_num desc) where r <![CDATA[ <]]> 2
+   </select> 
+   
+   <select id="notice_main2" resultType="com.to.me.dto.NoticeBoardDTO"> 
+	select * from (select notice_num, notice_title, notice_date, mem_id, notice_replynum, rownum r 
+    from (select notice_num, notice_title, notice_date, mem_id, notice_replynum 
+    from noticeboard order by notice_num desc) order by notice_num desc) 
+    where r <![CDATA[ <]]> 3 and r <![CDATA[ >]]> 1
+   </select> 
+   
+   <select id="notice_main3" resultType="com.to.me.dto.NoticeBoardDTO"> 
+	select * from (select notice_num, notice_title, notice_date, mem_id, notice_replynum, rownum r 
+    from (select notice_num, notice_title, notice_date, mem_id, notice_replynum 
+    from noticeboard order by notice_num desc) order by notice_num desc) 
+    where r <![CDATA[ <]]> 4 and r <![CDATA[ >]]> 2
+   </select> 
+
+   
+  
+</mapper>

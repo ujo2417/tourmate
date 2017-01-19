@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.UserBoardDTO">
+<!-- 게시판 -->
+   
+   <select id="user_list" parameterType="map" resultType="com.to.me.dto.UserBoardDTO">
+   SELECT USER_NUM, MEM_ID, USER_DATE, USER_CONTENT, USER_READCOUNT, USER_TITLE, USER_REPLYNUM, R FROM(SELECT USER_NUM, MEM_ID, USER_DATE, USER_CONTENT, USER_READCOUNT, USER_TITLE, USER_REPLYNUM, ROWNUM R 
+               FROM(SELECT USER_NUM, MEM_ID, USER_DATE, USER_CONTENT, USER_READCOUNT, USER_TITLE, USER_REPLYNUM 
+               FROM USERBOARD ORDER BY USER_NUM DESC) ORDER BY USER_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select>
+   
+   <!-- 메인페이지 후기게시판 리스트 -->
+   <select id="user_list_main" resultType="com.to.me.dto.UserBoardDTO">
+  	 select * from (select user_num, user_title, user_date, mem_id, user_replynum, user_content, user_good, rownum r from userboard) 
+		where r <![CDATA[ <]]> 9 order by user_good desc
+   </select>
+ 
+  <insert id="user_write" parameterType="com.to.me.dto.UserBoardDTO">
+      INSERT INTO USERBOARD (USER_NUM, MEM_ID, USER_TITLE, USER_CONTENT) VALUES (USER_BOARD_SEQ.NEXTVAL,#{mem_id}, #{user_title}, #{user_content})
+   </insert>
+   
+   <!-- 게시글 조회수 증가 -->
+   <update id="user_upHit" parameterType="map">
+      UPDATE USERBOARD SET USER_READCOUNT = USER_READCOUNT + 1 WHERE USER_NUM = #{user_num}
+   </update>
+   
+    <select id="user_content_view" parameterType="map" resultType="com.to.me.dto.UserBoardDTO"> 
+      SELECT USER_NUM, MEM_ID, USER_TITLE, USER_CONTENT, USER_DATE, USER_READCOUNT, 
+      USER_REPLYNUM,user_good FROM USERBOARD WHERE USER_NUM = #{user_num}
+   </select> 
+   
+   <!-- 댓글 출력 -->
+   <select id="user_reply_view" parameterType="map" resultType="com.to.me.dto.Re_UserBoardDTO"> 
+      SELECT RE_NUM, RE_CONTENT, RE_WRITEDATE, RE_USERNUM, MEM_ID
+      FROM USERBOARDREPLY WHERE RE_USERNUM = #{user_num} ORDER BY RE_NUM DESC 
+   </select> 
+   
+   <!-- 댓글 쓰기 -->
+   <insert id="user_reply_write">
+      INSERT INTO USERBOARDREPLY (RE_CONTENT, RE_USERNUM, RE_NUM, MEM_ID) VALUES (#{re_content}, #{re_usernum}, USERBOARDREPLY_SEQ.NEXTVAL, #{mem_id})
+   </insert>
+   
+   <!-- 댓글 갯수 +1 -->
+    <update id="user_reply_write_num">
+      UPDATE USERBOARD SET USER_REPLYNUM = USER_REPLYNUM + 1 WHERE USER_NUM = #{re_usernum}
+   </update>
+ 
+ 
+  <!-- 댓글 갯수 -1 -->
+   <update id="user_reply_delete_num">
+      UPDATE USERBOARD SET USER_REPLYNUM = USER_REPLYNUM - 1 WHERE USER_NUM = #{user_num}
+   </update>
+   
+	<!-- 댓글 삭제 -->
+   <delete id="user_reply_delete">
+      DELETE FROM USERBOARDREPLY WHERE RE_NUM = #{re_num} AND RE_USERNUM=#{user_num}
+   </delete>
+   
+   <!-- 게시글 삭제 -->
+    <delete id="user_delete">
+      DELETE FROM USERBOARD WHERE USER_NUM = #{user_num}
+   </delete>
+   
+   <!-- 게시글 수정 -->
+   <update id="user_modify">
+      UPDATE USERBOARD SET USER_TITLE=#{user_title}, USER_CONTENT= #{user_content} WHERE USER_NUM = #{user_num}
+   </update>   
+
+	<!-- 댓글 전부 삭제 -->
+    <delete id="user_reply_deleteAll">
+      DELETE FROM USERBOARDREPLY WHERE RE_USERNUM = #{user_num}
+   </delete>
+ 
+
+   
+   <!-- 게시글 갯수 -->
+   <select id="user_count" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM USERBOARD
+   </select> 
+   
+   <!-- 게시글 검색 갯수 -->
+   <select id="user_title_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM userBOARD WHERE user_TITLE LIKE '%${user_title}%'
+   </select> 
+   
+   <select id="user_content_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM userBOARD WHERE user_CONTENT LIKE '%${user_content}%'
+   </select>
+   
+   <select id="user_mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM userBOARD WHERE MEM_ID LIKE '%${mem_id}%'
+   </select>
+   
+    <!-- 게시글 검색 -->
+   <select id="user_title_searchlist" parameterType="map" resultType="com.to.me.dto.UserBoardDTO">
+   SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, ROWNUM R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM 
+               FROM userBOARD WHERE user_TITLE LIKE '%${user_title}%' ORDER BY user_NUM DESC) ORDER BY user_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="user_content_searchlist" parameterType="map" resultType="com.to.me.dto.UserBoardDTO">
+   SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, ROWNUM R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM 
+               FROM userBOARD WHERE user_CONTENT LIKE '%${user_content}%' ORDER BY user_NUM DESC) ORDER BY user_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="user_mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.UserBoardDTO">
+   SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM, ROWNUM R 
+               FROM(SELECT user_NUM, MEM_ID, user_DATE, user_CONTENT, user_READCOUNT, user_TITLE, user_REPLYNUM 
+               FROM userBOARD WHERE MEM_ID LIKE '%${mem_id}%' ORDER BY user_NUM DESC) ORDER BY user_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+   
+   <select id="selectpic" resultType="String">
+   	select mem_pic from member where mem_id=#{mem_id}
+   </select>
+   
+   <select id="usergoodconfirm" parameterType="map" resultType="com.to.me.dto.UserGoodDTO">
+   select * from userboardgood where mem_id=#{mem_id} and user_num=#{user_num}
+   </select>
+   
+   <insert id="usergood">
+   INSERT INTO userboardgood (user_num, MEM_ID) VALUES (#{user_num}, #{mem_id})
+   </insert>
+   <update id="usergoodup">
+   update userboard set user_good = user_good +1 where user_num=#{user_num}
+   </update>
+</mapper>

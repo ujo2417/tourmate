@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.to.me.dto.MateMemberDTO">
+	<!-- 메이트 멤버 출력 -->
+	<select id="matemem" resultType="com.to.me.dto.MateMemberDTO">
+		select * from matemember where mate_confirm=1 and mate_num = #{mate_num}
+	</select>
+	
+	<!-- 메이트멤버 확인 -->
+   <select id="mateconfirm" parameterType="map" resultType="com.to.me.dto.MateMemberDTO">
+      select * from matemember where mate_num = #{mate_num} and mate_confirm = 1
+   </select>
+   
+    <select id="mateconfirm2" parameterType="map" resultType="com.to.me.dto.MateMemberDTO">
+      select * from matemember where mate_num = #{mate_num} and mem_id=#{mem_id}
+   </select>
+   
+   <select id="selectMateMember" parameterType="map" resultType="String">
+      select mem_id from matemember where mate_num = #{mate_num} and mem_id=#{session_id} and mate_confirm = 1
+   </select>
+   
+   <!-- 메이트 추가 -->
+   <insert id="mateadd">
+      insert into matemember (mate_num, mem_id) values (#{mate_num}, #{mem_id})
+   </insert>
+   
+   <!-- 메이트 신청목록-->
+   <select id="mateapplist" resultType="com.to.me.dto.MateMemberDTO">
+      select * from matemember where mate_num = #{mate_num} and mate_confirm = 0
+   </select>
+   
+   <!-- 메이트 신청 수락 -->
+   <update id="mateappOk" >
+      update matemember set mate_confirm=1 where mate_num=#{mate_num} and mem_id=#{mem_id}
+   </update>
+   
+   <!-- 메이트 신청 거절 -->
+   <delete id="mateappNo" >
+      delete from matemember where mate_num=#{mate_num} and mem_id=#{mem_id}
+   </delete>
+   
+   <!-- 메이트 게시글 삭제시 메이트멤버 삭제 -->
+   <delete id="mate_mem_deleteAll" >
+      delete from matemember where mate_num=#{mate_num}
+   </delete>
+   
+   <!-- 메이트멤버 카운트 +1 -->
+   <update id="matecountUp">
+      update mateboard set mate_present = mate_present+1 where mate_num=#{mate_num}
+   </update>
+   
+   <!-- 메이트멤버 카운트 -1 -->
+   <update id="matecountDown">
+      update mateboard set mate_present = mate_present-1 where mate_num=#{mate_num}
+   </update>
+   
+   <!-- 메이트 글 작성시 작성자 메이트멤버 추가 -->
+   <insert id="matewriteadd" >
+      insert into matemember (mate_num, mem_id, mate_confirm) values ( (SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'MATE_BOARD_SEQ'), #{mem_id}, 1)
+   </insert>
+   
+   <!-- 메이트 정원이 꽉찻는지 확인하기위해 select -->
+   <select id="mateSelect" resultType="com.to.me.dto.MateBoardDTO">
+      select * from mateboard where mate_num=#{mate_num}
+   </select>
+   
+   <!-- 방장 확인 -->
+   <select id="mateChiefSelect" resultType="String">
+      select mem_id from mateboard where mate_num=#{mate_num}
+   </select>
+   
+  
+</mapper>

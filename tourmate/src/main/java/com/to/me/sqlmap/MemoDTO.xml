@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.MemoDTO">
+<!-- 받은 쪽지함 -->
+   <select id="memoReceiveCount" resultType="java.lang.Integer">
+   SELECT count(*) FROM MEMOBOX WHERE MEMO_RECEIVE_ID=#{MEMO_RECEIVE_ID, jdbcType=VARCHAR} and MEMO_OPEN_DATE is null
+   </select>
+
+   <select id="memoReceiveList" resultType="com.to.me.dto.MemoDTO">
+   SELECT * FROM MEMOBOX WHERE MEMO_RECEIVE_ID=#{MEMO_RECEIVE_ID}
+   </select>
+<!-- 보낸쪽지함 -->
+   <select id="memoSendList" resultType="com.to.me.dto.MemoDTO">
+   SELECT * FROM MEMOBOX WHERE MEMO_SEND_ID=#{MEMO_SEND_ID}
+   </select>
+<!-- 쪽지 보내기 -->
+<insert id="memoSend" parameterType="com.to.me.dto.MemoDTO">
+	INSERT INTO MEMOBOX (memo_num,memo_send_id,memo_receive_id,memo_title,memo_content) VALUES (memo_seq.nextval,#{memo_send_id}, #{memo_receive_id}, #{memo_title},#{memo_content})
+</insert>
+<!-- 메모지우기 -->
+<delete id="memoReceiveDel">
+	delete from MEMOBOX where memo_num = #{memo_num}
+</delete>
+<!-- 읽기 처리 -->
+<update id="memoReceiveOpen" parameterType="map">
+	update memobox 
+	<set> 
+	<if test="memo_open_date == null">
+	memo_open_date=sysdate
+	</if>
+	</set>
+	where memo_num=#{memo_num}
+	
+	
+</update>
+<!-- 메모상세보기 -->
+<select id="memoReceiveContent" resultType="com.to.me.dto.MemoDTO" >		
+	select * from memobox where memo_num=#{memo_num}
+</select>
+
+<insert id="memoSendsorry" parameterType="com.to.me.dto.MemoDTO">
+	INSERT INTO MEMOBOX (memo_num,memo_send_id,memo_receive_id,memo_title,memo_content) VALUES (memo_seq.nextval,#{writer_id}, #{mem_id}, #{title},#{content})
+</insert>
+
+
+
+</mapper>

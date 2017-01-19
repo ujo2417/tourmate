@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.MemberDTO">
+	<!-- 회원등급 -->
+	
+	<!-- 게시글 작성 등급점수 +10 -->
+	<update id="gradeUp10">
+		update member set mem_grade=mem_grade + 10 where mem_id=#{mem_id}
+	</update>
+	
+	<!-- 댓글 작성 등급점수 +2 -->
+	<update id="gradeUp2">
+		update member set mem_grade=mem_grade + 2 where mem_id=#{mem_id}
+	</update>
+	
+	<!-- 게시글 작성 등급점수 +20 -->
+	<update id="gradeUp20">
+		update member set mem_grade=mem_grade + 20 where mem_id=#{mem_id}
+	</update>
+	
+	 <!-- 등급 가져오기 -->
+   <select id="selectGrade" resultType="String">
+   		select mem_grade from member where mem_id=#{mem_id}
+   </select>
+	
+</mapper>

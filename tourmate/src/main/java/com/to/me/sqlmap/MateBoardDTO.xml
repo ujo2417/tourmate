@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.to.me.dto.MateBoardDTO">
+
+   
+   <!-- 메이트 게시판 리스트 -->
+   <select id="mate_list" parameterType="map" resultType="com.to.me.dto.MateBoardDTO">
+   SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, R FROM
+   			(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, ROWNUM R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2 
+               FROM mateBOARD ORDER BY mate_NUM DESC) ORDER BY mate_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select>
+   
+   <!-- 메인페이지 메이트게시판 리스트 -->
+   <select id="mate_list_main" resultType="com.to.me.dto.MateBoardDTO">
+  	 select * from (select mate_num, mate_title, mate_date, mem_id, mate_max, mate_present, mate_replynum, mate_date1, mate_date2, rownum r from mateboard) 
+		where r <![CDATA[ <]]> 7 order by mate_num desc
+   </select>
+   
+   <!-- 메이트 게시글 작성 -->
+   <insert id="mate_write" parameterType="com.to.me.dto.MateBoardDTO">
+      INSERT INTO mateBOARD (mate_NUM, MEM_ID, mate_TITLE, mate_CONTENT, mate_max, mate_present, mate_date1, mate_date2) VALUES (mate_BOARD_SEQ.NEXTVAL,#{mem_id}, #{mate_title}, #{mate_content}, #{mate_max}, 1, #{mate_date1}, #{mate_date2})
+   </insert>
+   
+   <!-- 게시글 조회수 증가 -->
+   <update id="mate_upHit" parameterType="map">
+      UPDATE mateBOARD SET mate_READCOUNT = mate_READCOUNT + 1 WHERE mate_NUM = #{mate_num}
+   </update>
+   
+   <!-- 상세보기 출력 -->
+   <select id="mate_content_view" parameterType="map" resultType="com.to.me.dto.MateBoardDTO"> 
+      SELECT mate_NUM, MEM_ID, mate_TITLE, mate_CONTENT, mate_DATE, mate_READCOUNT, mate_max, mate_present, mate_date1, mate_date2,  
+      mate_REPLYNUM FROM mateBOARD WHERE mate_NUM = #{mate_num}
+   </select> 
+
+   <!-- 댓글 출력 -->
+   <select id="mate_reply_view" parameterType="map" resultType="com.to.me.dto.Re_MateBoardDTO"> 
+      SELECT RE_NUM, RE_CONTENT, RE_WRITEDATE, RE_mateNUM, MEM_ID
+      FROM mateBOARDREPLY WHERE RE_mateNUM = #{mate_num} ORDER BY RE_NUM DESC 
+   </select> 	
+   
+   <!-- 게시글 수정 -->
+   <update id="mate_modify">
+      UPDATE mateBOARD SET mate_TITLE=#{mate_title}, mate_CONTENT= #{mate_content}, mate_date1=#{mate_date1}, mate_date2=#{mate_date2} WHERE mate_NUM = #{mate_num}
+   </update>   
+   
+   <!-- 게시글 삭제 -->
+    <delete id="mate_delete">
+      DELETE FROM mateBOARD WHERE mate_NUM = #{mate_num}
+   </delete>
+   
+   <!-- 댓글 전부 삭제 -->
+    <delete id="mate_reply_deleteAll">
+      DELETE FROM mateBOARDREPLY WHERE RE_mateNUM = #{mate_num}
+   </delete>
+   
+   <!-- 댓글 쓰기 -->
+   <insert id="mate_reply_write">
+      INSERT INTO mateBOARDREPLY (RE_CONTENT, RE_mateNUM, RE_NUM, MEM_ID) VALUES (#{re_content}, #{re_matenum}, mateBOARDREPLY_SEQ.NEXTVAL, #{mem_id})
+   </insert>
+   
+   <!-- 댓글 갯수 +1 -->
+    <update id="mate_reply_write_num">
+      UPDATE mateBOARD SET mate_REPLYNUM = mate_REPLYNUM + 1 WHERE mate_NUM = #{re_matenum}
+   </update>
+ 
+ 
+  <!-- 댓글 갯수 -1 -->
+   <update id="mate_reply_delete_num">
+      UPDATE mateBOARD SET mate_REPLYNUM = mate_REPLYNUM - 1 WHERE mate_NUM = #{mate_num}
+   </update>
+   
+	<!-- 댓글 삭제 -->
+   <delete id="mate_reply_delete">
+      DELETE FROM mateBOARDREPLY WHERE RE_NUM = #{re_num} AND RE_mateNUM=#{mate_num}
+   </delete>
+ 
+    <!-- 게시글 갯수 -->
+   <select id="mate_count" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM MATEBOARD
+   </select> 
+  
+     <!-- 게시글 검색 갯수 -->
+   <select id="mate_title_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM mateBOARD WHERE mate_TITLE LIKE '%${mate_title}%'
+   </select> 
+   
+   <select id="mate_content_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM mateBOARD WHERE mate_CONTENT LIKE '%${mate_content}%'
+   </select>
+   
+   <select id="mate_mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM mateBOARD WHERE MEM_ID LIKE '%${mem_id}%'
+   </select>
+   
+    <!-- 게시글 검색 -->
+   <select id="mate_title_searchlist" parameterType="map" resultType="com.to.me.dto.MateBoardDTO">
+   SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, ROWNUM R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2 
+               FROM mateBOARD WHERE mate_TITLE LIKE '%${mate_title}%' ORDER BY mate_NUM DESC) ORDER BY mate_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="mate_content_searchlist" parameterType="map" resultType="com.to.me.dto.MateBoardDTO">
+   SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, ROWNUM R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2 
+               FROM mateBOARD WHERE mate_CONTENT LIKE '%${mate_content}%' ORDER BY mate_NUM DESC) ORDER BY mate_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="mate_mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.MateBoardDTO">
+   SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2, ROWNUM R 
+               FROM(SELECT mate_NUM, MEM_ID, mate_DATE, mate_CONTENT, mate_READCOUNT, mate_TITLE, mate_REPLYNUM, mate_present, mate_max, mate_date1, mate_date2 
+               FROM mateBOARD WHERE MEM_ID LIKE '%${mem_id}%' ORDER BY mate_NUM DESC) ORDER BY mate_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+   
+  
+</mapper>

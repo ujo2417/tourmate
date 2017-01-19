@@ -1,0 +1,261 @@
+table.type03 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #ccc;
+	border-left: 3px solid #369;
+  margin : 20px 10px;
+}
+table.type03 th {
+	/* width: 150px */;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	color: #153d73;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+
+}
+table.type03 td {
+	/* width: 200px */;
+	padding: 10px;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+table.type04 {
+	border-collapse: separate;
+	border-spacing: 1px;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #ccc;
+  margin : 20px 10px;
+}
+table.type04 th {
+	width: 100px;
+	padding: 10px;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+table.type04 td {
+	width: 700px;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+
+
+table.type04_1 {
+	border-collapse: separate;
+	border-spacing: 1px;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #ccc;
+  margin : 20px 10px;
+}
+table.type04_1 th {
+	width: 100px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+}
+table.type04_1 td {
+	width: 200px;
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+}
+
+/* matecontentview */
+
+table.type04_2 {
+	border-collapse: separate;
+	border-spacing: 1px;
+	text-align: center;
+	
+	border-top: 1px solid #ccc;
+  margin : 20px 10px;
+}
+table.type04_2 th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+}
+table.type04_2 td {
+	width: 100px;
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+}
+
+
+table.type05 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	/* border-top: 1px solid #ccc; */
+	border-bottom: 1px solid #ccc;
+	margin: 20px 10px;
+}
+table.type05 th {
+	text-align: center;
+	width: 100px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+}
+table.type05 td {
+	text-align: left;
+	width: 200px;
+	padding: 10px;
+	vertical-align: top;
+}
+table.type05 .even {
+	background-color: #efefef;
+}
+
+
+
+table.type06 {
+	border-collapse: collapse;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	margin: 20px 10px;
+	font-size : 12px;
+	font: bold;
+}
+table.type06 th {
+	text-align: center;
+	width: 100px;
+	height :20px;
+	padding: 10px;
+	
+	font-weight: bold;
+}
+table.type06 td {
+	text-align: left;
+	width: 800px;
+	padding: 10px;
+}
+table.type06 .even {
+	background: #efefef;
+}
+
+
+table.type06_8 {
+	border-collapse: collapse;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	margin: 20px 10px;
+	font-size : 12px;
+	font: bold;
+}
+table.type06_8 th {
+	text-align: center;
+	width: 100px;
+	height :20px;
+	padding: 10px;
+	
+	font-weight: bold;
+}
+table.type06_8 td {
+	text-align: left;
+	width: 400px;
+	padding: 10px;
+}
+table.type06_8 .even {
+	background: #efefef;
+}
+
+
+
+
+table.type06_3 {
+	border-collapse: collapse;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	margin: 20px 10px;
+	font-size : 12px;
+	font: bold;
+}
+table.type06_3 th {
+	text-align: center;
+	width: 100px;
+	height :20px;
+	padding: 10px;
+	
+	font-weight: bold;
+}
+table.type06_3 td {
+	text-align: left;
+	width: 400px;
+	padding: 10px;
+}
+table.type06_3 .even {
+	background: #efefef;
+}
+
+table.type06_joinform {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	/* border-top: 1px solid #ccc; */
+	border-bottom: 1px solid #ccc;
+	margin: 20px 10px;
+}
+table.type06_joinform th {
+	text-align: center;
+	width: 200px;
+	height:70px;
+	padding: 10px;
+	vertical-align:top;
+	font-weight: bold;
+	margin-top:10px;
+	
+}
+table.type06_joinform td {
+	text-align: left;
+	padding: 10px;
+	vertical-align: top;
+	margin-top:10px;
+}
+
+table.type06_joinform tr:nth-child(odd) {
+	background: #efefef;
+}
+table.type09 {
+	border-collapse: collapse;
+	
+	line-height: 1.5;
+
+}
+table.type09 thead th {
+	padding: 10px;
+	font-weight: bold;
+	
+	color: #369;
+	border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+	/* width: 150px; */
+	padding: 10px;
+	font-weight: bold;
+	/* vertical-align: top; */
+	border-bottom: 1px solid #ccc;
+	background: #f3f6f7;
+}
+table.type09 td {
+	/* width: 350px; */
+	padding: 10px;
+	/* vertical-align: top; */
+	border-bottom: 1px solid #ccc;
+}
+.textsize{
+	width: 70px;
+	text-align: center;
+}

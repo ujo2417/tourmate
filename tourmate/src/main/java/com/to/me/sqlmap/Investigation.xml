@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.MemberDTO">
+
+	<!-- 투표했는지 확인 -->
+	<select id="investigationConfirm" resultType="com.to.me.dto.MemberDTO">
+  	 select MEM_INVESTIGATION from member where mem_id = #{mem_id}
+   </select>
+   
+   <!-- 투표수 확인 -->
+   <select id="investigationResult" resultType="com.to.me.dto.InvestigationDTO">
+  	 select * from INVESTIGATION
+   </select>
+   
+   
+   <update id = "investigateMember">
+   	update member set MEM_INVESTIGATION = #{num} where mem_id = #{mem_id}
+   </update>
+   
+   <update id="investigate1">
+   	update investigation set col1 = col1 + 1
+   </update>
+   <update id="investigate2">
+   	update investigation set col2 = col2 + 1
+   </update>
+   <update id="investigate3">
+   	update investigation set col3 = col3 + 1
+   	</update>
+   	<update id="investigate4">
+   	update investigation set col4 = col4 + 1
+   </update>
+   
+
+</mapper>

@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.clsBannerScreen {
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    clear: both;
+}
+ 
+.clsBannerScreen .images {
+    position: absolute;
+    display: none;
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.FreeBoardDTO">
+<!-- 게시판 -->
+   
+   <select id="free_list" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO">
+   SELECT FREE_NUM, MEM_ID, FREE_DATE, FREE_CONTENT, FREE_READCOUNT, FREE_TITLE, FREE_REPLYNUM, R FROM(SELECT FREE_NUM, MEM_ID, FREE_DATE, FREE_CONTENT, FREE_READCOUNT, FREE_TITLE, FREE_REPLYNUM, ROWNUM R 
+               FROM(SELECT FREE_NUM, MEM_ID, FREE_DATE, FREE_CONTENT, FREE_READCOUNT, FREE_TITLE, FREE_REPLYNUM 
+               FROM FREEBOARD ORDER BY FREE_NUM DESC) ORDER BY FREE_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select>
+ 
+  <insert id="free_write" parameterType="com.to.me.dto.FreeBoardDTO">
+      INSERT INTO FREEBOARD (FREE_NUM, MEM_ID, FREE_TITLE, FREE_CONTENT) VALUES (FREE_BOARD_SEQ.NEXTVAL,#{mem_id}, #{free_title}, #{free_content})
+   </insert>
+   
+   <!-- 게시글 조회수 증가 -->
+   <update id="free_upHit" parameterType="map">
+      UPDATE FREEBOARD SET FREE_READCOUNT = FREE_READCOUNT + 1 WHERE FREE_NUM = #{free_num}
+   </update>
+   
+    <select id="free_content_view" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO"> 
+      SELECT FREE_NUM, MEM_ID, FREE_TITLE, FREE_CONTENT, FREE_DATE, FREE_READCOUNT, 
+      FREE_REPLYNUM FROM FREEBOARD WHERE FREE_NUM = #{free_num}
+   </select> 
+   
+   <!-- 댓글 출력 -->
+   <select id="free_reply_view" parameterType="map" resultType="com.to.me.dto.Re_FreeBoardDTO"> 
+      SELECT RE_NUM, RE_CONTENT, RE_WRITEDATE, RE_FREENUM, MEM_ID
+      FROM FREEBOARDREPLY WHERE RE_FREENUM = #{free_num} ORDER BY RE_NUM DESC 
+   </select> 
+   
+   <!-- 댓글 쓰기 -->
+   <insert id="free_reply_write">
+      INSERT INTO FREEBOARDREPLY (RE_CONTENT, RE_FREENUM, RE_NUM, MEM_ID) VALUES (#{re_content}, #{re_freenum}, FREEBOARDREPLY_SEQ.NEXTVAL, #{mem_id})
+   </insert>
+   
+   <!-- 댓글 갯수 +1 -->
+    <update id="free_reply_write_num">
+      UPDATE FREEBOARD SET FREE_REPLYNUM = FREE_REPLYNUM + 1 WHERE FREE_NUM = #{re_freenum}
+   </update>
+ 
+ 
+  <!-- 댓글 갯수 -1 -->
+   <update id="free_reply_delete_num">
+      UPDATE FREEBOARD SET FREE_REPLYNUM = FREE_REPLYNUM - 1 WHERE FREE_NUM = #{free_num}
+   </update>
+   
+	<!-- 댓글 삭제 -->
+   <delete id="free_reply_delete">
+      DELETE FROM FREEBOARDREPLY WHERE RE_NUM = #{re_num} AND RE_FREENUM=#{free_num}
+   </delete>
+   
+   <!-- 게시글 삭제 -->
+    <delete id="free_delete">
+      DELETE FROM FREEBOARD WHERE FREE_NUM = #{free_num}
+   </delete>
+   
+   <!-- 게시글 수정 -->
+   <update id="free_modify">
+      UPDATE FREEBOARD SET FREE_TITLE=#{free_title}, FREE_CONTENT= #{free_content} WHERE FREE_NUM = #{free_num}
+   </update>   
+
+	<!-- 댓글 전부 삭제 -->
+    <delete id="free_reply_deleteAll">
+      DELETE FROM FREEBOARDREPLY WHERE RE_FREENUM = #{free_num}
+   </delete>
+ 
+
+   
+   <!-- 게시글 갯수 -->
+   <select id="free_count" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM FREEBOARD
+   </select> 
+   <!-- 게시글 검색 갯수 -->
+   <select id="free_title_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM freeBOARD WHERE free_TITLE LIKE '%${free_title}%'
+   </select> 
+   
+   <select id="free_content_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM freeBOARD WHERE free_CONTENT LIKE '%${free_content}%'
+   </select>
+   
+   <select id="free_mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM freeBOARD WHERE MEM_ID LIKE '%${mem_id}%'
+   </select>
+   
+    <!-- 게시글 검색 -->
+   <select id="free_title_searchlist" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO">
+   SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, ROWNUM R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM 
+               FROM freeBOARD WHERE free_TITLE LIKE '%${free_title}%' ORDER BY free_NUM DESC) ORDER BY free_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="free_content_searchlist" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO">
+   SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, ROWNUM R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM 
+               FROM freeBOARD WHERE free_CONTENT LIKE '%${free_content}%' ORDER BY free_NUM DESC) ORDER BY free_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+     <select id="free_mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO">
+   SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM, ROWNUM R 
+               FROM(SELECT free_NUM, MEM_ID, free_DATE, free_CONTENT, free_READCOUNT, free_TITLE, free_REPLYNUM 
+               FROM freeBOARD WHERE MEM_ID LIKE '%${mem_id}%' ORDER BY free_NUM DESC) ORDER BY free_NUM DESC) 
+               WHERE R <![CDATA[ >=]]> #{startRow} AND R <![CDATA[ <=]]> #{endRow}
+   </select> 
+   
+  
+</mapper>

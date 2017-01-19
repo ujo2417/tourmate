@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+
+
+<!-- 
+<tiles-definitions>
+    <definition name="index" template="/WEB-INF/views/template/layout.jsp">
+        <put-attribute name="title"  value="Spring Tiles Example"/>
+        <put-attribute name="menu"   value="/WEB-INF/views/template/menu.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+        <put-attribute name="body"   value="/WEB-INF/views/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+    </definition>
+    
+    <definition name="list" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/freeboard/list.jsp"/>
+    </definition>
+    
+    <definition name="write_view" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/freeboard/write_view.jsp"/>
+    </definition>
+    
+    <definition name="content_view" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/freeboard/content_view.jsp"/>
+    </definition>
+    
+     <definition name="modify_view" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/freeboard/modify_view.jsp"/>
+    </definition>
+    
+    <definition name="menu2" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/body-menu2.jsp"/>
+    </definition>
+    
+    <definition name="menu3" extends="index">
+        <put-attribute name="body"   value="/WEB-INF/views/body-menu3.jsp"/>
+    </definition>
+</tiles-definitions>
+ -->
+
+<!-- 쓸거 -->
+
+<tiles-definitions>
+    <definition name="index" template="/WEB-INF/views/template1/layout.jsp">
+    
+  
+        <put-attribute name="title"  value="COMe TOur MatE"/>
+        <put-attribute name="header" value="/WEB-INF/views/template1/header.jsp"/>
+        <put-attribute name="center" value="/WEB-INF/views/template1/center.jsp"/>
+    	<put-attribute name="footer"   value="/WEB-INF/views/template1/footer.jsp"/> 
+  	
+    </definition>
+    
+   <!-- freeboard list --> 
+    
+    <definition name="freelist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/freeboard/free_list.jsp"/>
+    </definition>
+    
+    <definition name="freewrite" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/freeboard/free_write_view.jsp"/>
+    </definition>
+    
+    <definition name="free_content_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/freeboard/free_content_view.jsp"/>
+    </definition>
+    
+     <definition name="free_modify_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/freeboard/free_modify_view.jsp"/>
+    </definition>
+
+	 <definition name="freesearchlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/freeboard/freesearchlist.jsp"/>
+    </definition>
+    
+ <!-- freeboard list end --> 
+ 
+ <!-- noticeboard list --> 
+    
+    <definition name="noticelist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/noticeboard/notice_list.jsp"/>
+    </definition>
+    
+    <definition name="noticewrite" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/noticeboard/notice_write_view.jsp"/>
+    </definition>
+    
+    <definition name="notice_content_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/noticeboard/notice_content_view.jsp"/>
+    </definition>
+    
+     <definition name="notice_modify_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/noticeboard/notice_modify_view.jsp"/>
+    </definition>
+
+	 <definition name="noticesearchlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/noticeboard/noticesearchlist.jsp"/>
+    </definition>
+    
+ <!-- noticeboard list end --> 
+ 
+ 
+ <!-- mypage mate join confirm -->
+ <definition name="mateJoinList" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/mateJoinList.jsp"/>
+    </definition>
+    
+  <!-- login list --> 
+  
+ 
+    
+ <definition name="mypage" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/mypage.jsp"/>
+    </definition>
+  
+ <definition name="joinForm" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/joinForm.jsp"/>
+    </definition>
+<!--    <definition name="login" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/login.jsp"/>
+    </definition> -->
+
+     <definition name="modifyForm" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/modifyForm.jsp"/>
+    </definition>
+    
+      <definition name="confirmId" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/confirmId.jsp"/>
+    </definition>
+    
+   <!--  <definition name="researchIdForm" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/researchIdForm.jsp"/>
+    </definition>
+    
+     <definition name="researchIdOk" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/researchIdOk.jsp"/>
+    </definition>
+    
+    <definition name="researchIdError" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/researchIdError.jsp"/>
+    </definition>
+    
+    <definition name="researchPwdForm" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/researchPwdForm.jsp"/>
+    </definition>
+   
+     <definition name="researchPwdOk" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/researchPwdOk.jsp"/>
+    </definition>  -->
+  <definition name="memberView" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/memberView.jsp"/>
+    </definition>
+    
+    <definition name="memberView_free" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/memberView_free.jsp"/>
+    </definition>
+    
+    <definition name="memberView_user" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/memberView_user.jsp"/>
+    </definition>
+    
+    <definition name="memberView_mate" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/memberView_mate.jsp"/>
+    </definition>
+    
+    
+     <!-- mypage mate join confirm -->
+ <definition name="mateJoinList" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/member/mateJoinList.jsp"/>
+    </definition>
+    
+    
+    <!-- login end -->
+    
+   <!-- userboard list --> 
+    
+    <definition name="userlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/user_list.jsp"/>
+    </definition>
+    
+    <definition name="userwrite" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/user_write_view.jsp"/>
+    </definition>
+    
+    <definition name="user_content_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/user_content_view.jsp"/>
+    </definition>
+    
+     <definition name="user_modify_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/user_modify_view.jsp"/>
+    </definition>
+
+	 <definition name="usersearchlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/usersearchlist.jsp"/>
+    </definition>
+    
+    <definition name="usergood_success" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/usergood_success.jsp"/>
+    </definition>
+    
+    <definition name="usergood_fail" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/userboard/usergood_fail.jsp"/>
+    </definition>
+    
+ <!-- userboard list end -->
+ 
+ 
+    <!-- mateboard list --> 
+    
+    <definition name="matelist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_list.jsp"/>
+    </definition>
+    
+    <definition name="mate_write_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_write_view.jsp"/>
+    </definition>
+    
+    <definition name="mate_content_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_content_view.jsp"/>
+    </definition>
+    
+     <definition name="mate_modify_view" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_modify_view.jsp"/>
+    </definition>
+
+	 <definition name="matesearchlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/matesearchlist.jsp"/>
+    </definition>
+    
+    <definition name="mate_appsuccess" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_appsuccess.jsp"/>
+    </definition>
+    
+    <definition name="mate_appfail" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_appfail.jsp"/>
+    </definition>
+    
+    <definition name="mate_mem" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_mem.jsp"/>
+    </definition>
+    
+<!--     <definition name="mate_applist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/mate_applist.jsp"/>
+    </definition> -->
+
+	 <definition name="matesearchlist" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/mateboard/matesearchlist.jsp"/>
+    </definition>    
+    
+ <!-- mateboard list end -->   
+ 
+ 
+ <!-- db 게시판 list -->          
+
+    <definition name="recommand" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/recommand.jsp"/>
+    </definition>
+    
+    <definition name="recommandDetail" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/recommandDetail.jsp"/>
+    </definition>
+    
+    <definition name="food" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/food.jsp"/>
+    </definition>
+    
+     <definition name="foodDetail" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/foodDetail.jsp"/>
+    </definition>
+    
+    
+    
+       <definition name="corse" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/corse.jsp"/>
+    </definition>
+    
+         <definition name="corseDetail" extends="index">
+        <put-attribute name="center"   value="/WEB-INF/views/tourdb/corseDetail.jsp"/>
+    </definition>
+    
+    
+    
+ <!-- db 게시판 list -->   
+ 
+ 
+ <!-- admin board -->
+ <definition name="admincustomerlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/admincustomerlist.jsp"></put-attribute>
+ </definition>
+ <definition name="adminsearchlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminsearchlist.jsp"></put-attribute>
+ </definition>
+ <definition name="adminModifyForm" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminModifyForm.jsp"></put-attribute>
+ </definition>
+ <definition name="adminFreeSearchlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminFreeSearchlist.jsp"></put-attribute>
+ </definition>
+  <definition name="adminFreelist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminFreelist.jsp"></put-attribute>
+ </definition>
+  
+ <definition name="admincontent_view" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/admincontent_view.jsp"></put-attribute>
+ </definition>
+ <definition name="adminUserlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminUserlist.jsp"></put-attribute>
+ </definition>
+ <definition name="admin_user_content_view" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/admin_user_content_view.jsp"></put-attribute>
+ </definition>
+ <definition name="adminUserSearchlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminUserSearchlist.jsp"></put-attribute>
+ </definition>
+ 
+ <definition name="contact" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/contact.jsp"></put-attribute>
+ </definition>
+ 
+ <definition name="adminMate_list" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminMate_list.jsp"></put-attribute>
+ </definition>
+ <definition name="adminMate_content_view" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminMate_content_view.jsp"></put-attribute>
+ </definition>
+ <definition name="adminMatesearchlist" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/admin/adminMatesearchlist.jsp"></put-attribute>
+ </definition>
+ 
+ <!-- 쪽지 -->
+<definition name="memoSendForm" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/memoBox/memoSendForm.jsp"></put-attribute>
+</definition>
+<definition name="memoReceiveList" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/memoBox/memoReceiveList.jsp"></put-attribute>
+</definition>
+<definition name="memoSendList" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/memoBox/memoSendList.jsp"></put-attribute>
+</definition>
+<definition name="memoSendForm" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/memoBox/memoSendForm.jsp"></put-attribute>
+</definition>
+<definition name="memoReceiveContent" extends="index">
+ 	<put-attribute name="center" value="/WEB-INF/views/memoBox/memoReceiveContent.jsp"></put-attribute>
+</definition>
+
+<!-- 쪽지 -->
+ 
+ 
+ </tiles-definitions>
+ 
+
+
+   
+ 
+
+

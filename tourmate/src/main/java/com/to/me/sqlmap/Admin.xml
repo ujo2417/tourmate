@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.to.me.dto.MemberDTO">
+
+	<!-- 관리자 회원 관리 리스트 -->
+	<select id="adminList" resultType="com.to.me.dto.MemberDTO">
+		select * from member
+	</select>
+
+	<!-- 회원 수 -->
+	<select id="mem_count" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM member
+    </select>
+    
+    <!-- 회원 검색 갯수-->
+    <select id="mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM member WHERE mem_id LIKE '%${memid}%'
+   </select> 
+   
+   <select id="mem_name_searchcount" parameterType="map" resultType="java.lang.Integer">
+      SELECT COUNT(*) FROM member WHERE mem_name LIKE '%${memname}%'
+   </select>
+   
+   
+   <!-- 검색 -->
+   <select id="mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.MemberDTO">
+      SELECT * FROM member WHERE mem_id LIKE '%${memid}%'
+   </select>
+   <select id="mem_name_searchlist" parameterType="map" resultType="com.to.me.dto.MemberDTO">
+      SELECT * FROM member WHERE mem_name LIKE '%${memname}%'
+   </select>
+  
+</mapper>

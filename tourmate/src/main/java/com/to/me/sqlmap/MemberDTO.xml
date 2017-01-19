@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.to.me.dto.MemberDTO">
+
+	<!-- 로그인 -->
+
+	<select id="login" parameterType="map" resultType="com.to.me.dto.MemberDTO">
+		SELECT mem_pwd
+		FROM member WHERE mem_id = #{mem_id}
+	</select>
+	
+	<select id="confirmId" resultType="String">
+		SELECT MEM_ID FROM MEMBER WHERE  MEM_ID = #{mem_id, jdbcType=VARCHAR}
+	</select>
+	
+
+	<!-- 회원가입 -->
+	<insert id="joinInsert">
+		INSERT INTO MEMBER (mem_id, mem_name, mem_pwd, mem_post1, mem_post2,
+		mem_phone, mem_email, mem_pic, mem_address, mem_area, mem_sex,
+		mem_birth, mem_grade, mem_phone2, mem_phone3)
+		VALUES (#{mem_id}, #{mem_name}, #{mem_pwd}, #{mem_post1}, #{mem_post2}, #{mem_phone}, #{mem_email},
+		#{mem_pic}, #{mem_address}, #{mem_area},
+		 #{mem_sex}, #{mem_birth}, 0,
+		#{mem_phone2}, #{mem_phone3})
+	</insert>
+
+	<!-- 회원정보 뽑기 -->
+	<select id="modifyForm" resultType="com.to.me.dto.MemberDTO" >
+		select mem_id, mem_name, mem_pwd,
+		mem_phone, mem_email, mem_pic, mem_address, mem_area, mem_sex, mem_post1, mem_post2,
+		mem_birth, mem_grade, mem_phone2, mem_phone3 from member where mem_id=#{mem_id}
+	</select>
+
+	<!-- 회원수정 -->
+	<update id="modifyOk" parameterType="com.to.me.dto.MemberDTO">
+		update member set mem_name=#{mem_name, jdbcType=VARCHAR}, mem_pwd=#{mem_pwd, jdbcType=VARCHAR},
+		mem_phone=#{mem_phone, jdbcType=VARCHAR}, mem_post1=#{mem_post1, jdbcType=VARCHAR}, mem_post2=#{mem_post2, jdbcType=VARCHAR},
+		mem_email=#{mem_email, jdbcType=VARCHAR}, mem_pic=#{mem_pic, jdbcType=VARCHAR}, mem_address=#{mem_address, jdbcType=VARCHAR},
+		mem_area=#{mem_area, jdbcType=VARCHAR}, mem_sex=#{mem_sex, jdbcType=VARCHAR},
+		mem_phone2=#{mem_phone2, jdbcType=VARCHAR}, mem_phone3=#{mem_phone3, jdbcType=VARCHAR} where mem_id = #{mem_id, jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="memberDelete">
+		delete from member where mem_id = #{mem_id}
+	</delete>
+	
+	<!-- 아이디찾기 -->
+	<select id="researchId" parameterType="map" resultType="com.to.me.dto.MemberDTO">
+		select * from member where mem_email = #{mem_email}
+	</select>
+	
+	<!-- 그림 -->
+   <select id="getpic" resultType="String">
+    select mem_pic from member where mem_id = #{mem_id}
+   </select>
+   
+    <!-- 메이트 신청 확인 -->
+   <select id="mateJoinList" parameterType="map" resultMap="MapTypeResultMap">
+		select matemember.mate_num as mate_num, matemember.mate_confirm as mate_confirm, mateboard.mate_title as mate_title, 
+			mateboard.mate_max as mate_max, mateboard.mate_present as mate_present, mateboard.mate_date as mate_date, 
+			mateboard.mate_readcount as mate_readcount, mateboard.mate_replynum as mate_replynum, matemember.mem_id as user_id, mateboard.mem_id as master_id
+	from matemember, mateboard where matemember.mem_id = #{mem_id} and matemember.mate_num = mateboard.mate_num
+	</select>
+	<resultMap type="map" id="MapTypeResultMap">
+		<result column="mate_num" property="mate_num" javaType="String" />
+		<result column="mate_confirm" property="mate_confirm" javaType="String" />
+		<result column="mate_title" property="mate_title" javaType="String" />
+		<result column="mate_max" property="mate_max" javaType="String" />
+		<result column="mate_present" property="mate_present" javaType="String" />
+		<result column="mate_date" property="mate_date" javaType="String" />
+		<result column="mate_readcount" property="mate_readcount" javaType="String" />
+		<result column="mate_replynum" property="mate_replynum" javaType="String" />
+		<result column="user_id" property="user_id" javaType="String" />
+		<result column="master_id" property="master_id" javaType="String" />
+	</resultMap>
+	
+	<!-- <select id="memberview_free_reply" parameterType="map" resultMap="freemap">
+		select distinct freeboard.free_num as free_num, freeboard.free_title as free_title, freeboard.mem_id as mem_id, freeboard.free_date as free_date, freeboard.free_readcount as free_readcount, freeboard.free_replynum as free_replynum
+		from freeboard, freeboardreply 
+		where freeboardreply.mem_id = #{mem_id} and freeboard.free_num = freeboardreply.re_freenum
+	</select>
+	<resultMap type="map" id="freemap">
+		<result column="free_num" property="free_num" javaType="String" />
+		<result column="mem_id" property="mem_id" javaType="String" />
+		<result column="free_title" property="free_title" javaType="String" />
+		<result column="free_date" property="free_date" javaType="String" />
+		<result column="free_readcount" property="free_readcount" javaType="String" />
+		<result column="free_replynum" property="free_replynum" javaType="String" />
+		
+	</resultMap> -->
+	<!-- 회원상세보기 내가 댓글 쓴 글 보기 자유게시판-->
+	<select id="memberview_free_reply" parameterType="map" resultType="com.to.me.dto.FreeBoardDTO">
+		select distinct freeboard.free_num as free_num, freeboard.free_title as free_title, freeboard.mem_id as mem_id, freeboard.free_date as free_date, freeboard.free_readcount as free_readcount, freeboard.free_replynum as free_replynum
+		from freeboard, freeboardreply 
+		where freeboardreply.mem_id = #{mem_id} and freeboard.free_num = freeboardreply.re_freenum
+	</select>
+	
+	<!-- 회원상세보기 내가 댓글 쓴 글 보기 유저게시판-->
+	<select id="memberview_user_reply" parameterType="map" resultType="com.to.me.dto.UserBoardDTO">
+		select distinct userboard.user_num as user_num, userboard.user_title as user_title, userboard.mem_id as mem_id, userboard.user_date as user_date, userboard.user_readcount as user_readcount, userboard.user_replynum as user_replynum
+		from userboard, userboardreply 
+		where userboardreply.mem_id = #{mem_id} and userboard.user_num = userboardreply.re_usernum
+	</select>
+	
+	<!-- 회원상세보기 내가 댓글 쓴 글 보기 메이트게시판-->
+	<select id="memberview_mate_reply" parameterType="map" resultType="com.to.me.dto.MateBoardDTO">
+		select distinct mateboard.mate_num as mate_num, mateboard.mate_title as mate_title, mateboard.mem_id as mem_id, mateboard.mate_date as mate_date, mateboard.mate_readcount as mate_readcount, mateboard.mate_replynum as mate_replynum
+		from mateboard, mateboardreply 
+		where mateboardreply.mem_id = #{mem_id} and mateboard.mate_num = mateboardreply.re_matenum
+	</select>
+	
+	<!-- 회원상세보기 내가 쓴 글 보기 자유게시판-->
+   <select id="memberview_free" resultType="com.to.me.dto.FreeBoardDTO">
+   SELECT MEM_ID, FREE_NUM, FREE_TITLE, FREE_DATE FROM FREEBOARD WHERE MEM_ID = #{mem_id, jdbcType=VARCHAR}
+   </select>
+   
+   <!-- 회원상세보기 내가 쓴 글 보기 메이트게시판-->
+   <select id="memberview_mate" resultType="com.to.me.dto.MateBoardDTO">
+   SELECT MEM_ID, MATE_NUM, MATE_TITLE, MATE_DATE FROM MATEBOARD WHERE MEM_ID=#{mem_id, jdbcType=VARCHAR}
+   </select>
+   
+   <!-- 회원상세보기 내가 쓴 글 보기 유저게시판-->
+   <select id="memberview_user" resultType="com.to.me.dto.UserBoardDTO">
+   SELECT MEM_ID, USER_NUM, USER_TITLE, USER_DATE FROM USERBOARD WHERE MEM_ID=#{mem_id, jdbcType=VARCHAR}
+   </select>
+   
+   <!-- 회원탈퇴 시 모든 게시글 정보 삭제 -->
+   <delete id="freeDelete">
+		delete from freeboard where mem_id = #{mem_id}
+	</delete>
+	<delete id="freereplyDelete">
+		delete from freeboardreply where mem_id = #{mem_id}
+	</delete>
+	<delete id="userDelete">
+		delete from userboard where mem_id = #{mem_id}
+	</delete>
+	<delete id="userreplyDelete">
+		delete from userboardreply where mem_id = #{mem_id}
+	</delete>
+	<delete id="mateDelete">
+		delete from mateboard where mem_id = #{mem_id}
+	</delete>
+	<delete id="matereplyDelete">
+		delete from mateboardreply where mem_id = #{mem_id}
+	</delete>
+	<delete id="matememberDelete">
+		delete from matemember where mem_id = #{mem_id}
+	</delete>
+</mapper>
