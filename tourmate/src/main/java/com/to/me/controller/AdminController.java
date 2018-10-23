@@ -34,7 +34,7 @@ public class AdminController {
 	// 관리자 회원관리 리스트
 	public String adminOk(MemberDTO dto, Model model, HttpSession session) {
 		System.out.println("adminOk()");
-
+		System.out.println("???");
 		model.addAttribute("adminList", sqlSession.selectList("adminList"));
 		String mem_id = (String)session.getAttribute("mem_id");
 		model.addAttribute("count",sqlSession.selectOne("mem_count"));
