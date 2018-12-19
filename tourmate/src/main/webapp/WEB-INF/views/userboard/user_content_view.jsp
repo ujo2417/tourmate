@@ -49,7 +49,7 @@
 	}
 	</script>
 <head>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -142,19 +142,19 @@
                             </div> --%>
                             <div class="media-body post_reply_comments">
                                 <h3 style="text-align: left"><c:if test="${re_dto.mem_grade <= 100 && re_dto.mem_grade >=0}">
-						<img src="/resources/grade/grade1.jpg" >
+						<img src="resources/grade/grade1.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>100 && re_dto.mem_grade<=300 }">
-						<img src="/resources/grade/grade2.jpg" >
+						<img src="resources/grade/grade2.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>300 && re_dto.mem_grade<1000 }">
-						<img src="/resources/grade/grade3.jpg" >
+						<img src="resources/grade/grade3.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>1000 && re_dto.mem_grade<2500 }">
-						<img src="/resources/grade/grade4.jpg" >
+						<img src="resources/grade/grade4.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>2500}">
-						<img src="/resources/grade/grade5.jpg" >
+						<img src="resources/grade/grade5.jpg" >
 					</c:if>${re_dto.mem_id }</h3>
                                 <h4 style="text-align: left">${re_dto.re_writedate}</h4>
                                 <h5 style="text-align: left">${re_dto.re_content}</h5>

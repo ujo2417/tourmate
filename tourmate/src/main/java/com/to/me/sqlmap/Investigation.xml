@@ -12,7 +12,7 @@
    
    <!-- 투표수 확인 -->
    <select id="investigationResult" resultType="com.to.me.dto.InvestigationDTO">
-  	 select * from INVESTIGATION
+  	 select * FROM investigation 
    </select>
    
    

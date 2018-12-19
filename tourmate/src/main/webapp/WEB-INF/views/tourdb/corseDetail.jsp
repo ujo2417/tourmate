@@ -12,7 +12,7 @@
 <body>
 
 <br>
-		<center><img src="/resources/corlate/images/logo/tourcourselogo.png" alt="内胶家俺" width="200px" height="180px"></center>
+		<center><img src="resources/corlate/images/logo/tourcourselogo.png" alt="内胶家俺" width="200px" height="180px"></center>
 	<hr color="gray">
 		<table border=	"0" align="center" style="margin:100px 200px 100px 200px">
 			

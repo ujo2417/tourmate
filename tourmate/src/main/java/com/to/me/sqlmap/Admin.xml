@@ -10,27 +10,4 @@
 		select * from member
 	</select>
 
-	<!-- 회원 수 -->
-	<select id="mem_count" resultType="java.lang.Integer">
-      SELECT COUNT(*) FROM member
-    </select>
-    
-    <!-- 회원 검색 갯수-->
-    <select id="mem_id_searchcount" parameterType="map" resultType="java.lang.Integer">
-      SELECT COUNT(*) FROM member WHERE mem_id LIKE '%${memid}%'
-   </select> 
-   
-   <select id="mem_name_searchcount" parameterType="map" resultType="java.lang.Integer">
-      SELECT COUNT(*) FROM member WHERE mem_name LIKE '%${memname}%'
-   </select>
-   
-   
-   <!-- 검색 -->
-   <select id="mem_id_searchlist" parameterType="map" resultType="com.to.me.dto.MemberDTO">
-      SELECT * FROM member WHERE mem_id LIKE '%${memid}%'
-   </select>
-   <select id="mem_name_searchlist" parameterType="map" resultType="com.to.me.dto.MemberDTO">
-      SELECT * FROM member WHERE mem_name LIKE '%${memname}%'
-   </select>
-  
 </mapper>

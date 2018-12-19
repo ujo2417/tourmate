@@ -12,21 +12,21 @@
     <title>TOur MatE</title>
 	
 	<!-- core CSS -->
-    <link href="/resources/corlate/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/animate.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/resources/corlate/css/main.css" rel="stylesheet">
-    <link href="/resources/corlate/css/responsive.css" rel="stylesheet">
+    <link href="resources/corlate/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/animate.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/prettyPhoto.css" rel="stylesheet">
+    <link href="resources/corlate/css/main.css" rel="stylesheet">
+    <link href="resources/corlate/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 
@@ -40,7 +40,7 @@
             </ol>
             <div class="carousel-inner">
 
-                 <div class="item active" style="background-image: url(/resources/corlate/images/sample6.jpg);height:600px;" >
+                 <div class="item active" style="background-image: url(resources/corlate/images/sample6.jpg);height:600px;" >
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -53,7 +53,7 @@
 
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                                 <!-- <div class="slider-img">
-                                    <img src="/resources/corlate/images/slider/img1.png" class="img-responsive">
+                                    <img src="resources/corlate/images/slider/img1.png" class="img-responsive">
                                 </div> -->
                             </div>
 
@@ -61,7 +61,7 @@
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(/resources/corlate/images/sample4.jpg);height:600px;">
+                <div class="item" style="background-image: url(resources/corlate/images/sample4.jpg);height:600px;">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -81,7 +81,7 @@
                     </div>
                 </div><!--/.item-->
 
-                <div class="item" style="background-image: url(/resources/corlate/images/sample5.jpg);height:600px;">
+                <div class="item" style="background-image: url(resources/corlate/images/sample5.jpg);height:600px;">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -126,7 +126,7 @@
                                      <div class="tab-pane fade active in" id="tab1">
                                      <div class="media">
                                       <div class="">
-                                                <img class="img-responsive" src="/resources/corlate/images/tour_image/vview4.jpg" width="500" height="450">
+                                                <img class="img-responsive" src="resources/corlate/images/tour_image/vview4.jpg" width="500" height="450">
                                             </div> <br>
                                             <div class="media-body">
                                         <p><h4>모네의 정원</h4></p>
@@ -137,7 +137,7 @@
                                     <div class="tab-pane fade" id="tab2">
                                     <div class="media">
                                       <div class="">
-                                                <img class="img-responsive" src="/resources/corlate/images/tour_image/vview2.jpg" width="500" height="450">
+                                                <img class="img-responsive" src="resources/corlate/images/tour_image/vview2.jpg" width="500" height="450">
                                             </div> <br>
                                             <div class="media-body">
                                         <p><h4>광안대교</h4></p>
@@ -147,7 +147,7 @@
 								</div>
                                       <div class="tab-pane fade" id="tab3">
                                       <div class="">
-                                                <img class="img-responsive" src="/resources/corlate/images/tour_image/vview3.jpg" width="500" height="450">
+                                                <img class="img-responsive" src="resources/corlate/images/tour_image/vview3.jpg" width="500" height="450">
                                             </div> <br>
                                         <p><h4>보령 머드축제</h4></p>
                                         한바탕 신나게 놀아보자!<br> 머드는 물과는 다른 또 다른 시원함을 선사한다. 많은 사람들이 참가하는 축제이니만큼 그 즐거움은 배로 더해진다. 머드의 시원함을 느껴보고 싶다면 지금 당장 보령으로 달려가자!
@@ -156,7 +156,7 @@
                                      
                                      <div class="tab-pane fade" id="tab4">
                                       <div class="">
-                                                <img class="img-responsive" src="/resources/corlate/images/tour_image/vview5.jpg" width="500" height="450">
+                                                <img class="img-responsive" src="resources/corlate/images/tour_image/vview5.jpg" width="500" height="450">
                                             </div> <br>
                                         <p><h4>제주도의 우도</h4></p>
                                         여긴 우리나라의 우도!<br> 우리나라도 이렇게 아름답고 보기만 해도 힐링이 되는 곳이 있다면 우도를 손에 꼽을 것이다. 우도는 시간이 멈춘듯 온 세상이 아름다움만을 보여준다. 지금 힐링이 필요하다면 망설이지 말고 우도를 택하자! 
@@ -165,7 +165,7 @@
                                      
                                      <div class="tab-pane fade" id="tab5">
                                       <div class="">
-                                                <img class="img-responsive" src="/resources/corlate/images/tour_image/vview1.jpg" width="500" height="450">
+                                                <img class="img-responsive" src="resources/corlate/images/tour_image/vview1.jpg" width="500" height="450">
                                             </div> <br>
                                         <p><h4>청평계곡</h4></p>
                                         여름은 물의 계절! <br> 넓은 바다가 아닌 다른 매력을 가진 계곡은 지친 일상에서 잠시 벗어나 산림욕과 함께 즐길 수 있는 물의 시원함을 서울 근교에서 느껴보자!
@@ -190,7 +190,7 @@
                         <br>
                          <div class="media testimonial-inner">
                             <div class="pull-left">
-                            	<img class="img-responsive img-circle" src="/resources/corlate/images/notice1.png" width="45px" height="20px">
+                            	<img class="img-responsive img-circle" src="resources/corlate/images/notice1.png" width="45px" height="20px">
                             </div>
                            
                             <div class="media-body">
@@ -204,7 +204,7 @@
 							
                         <div class="media testimonial-inner">
                             <div class="pull-left">
-                            	<img class="img-responsive img-circle" src="/resources/corlate/images/notice2.png" width="50px" height="22px">
+                            	<img class="img-responsive img-circle" src="resources/corlate/images/notice2.png" width="50px" height="22px">
                             </div>
                             <div class="media-body">
                                 <p style="font-weight: bold;">공지 2</p>
@@ -216,7 +216,7 @@
                          
                          <div class="media testimonial-inner">
                             <div class="pull-left">
-                            	   <img class="img-responsive img-circle" src="/resources/corlate/images/notice3.png" width="50x" height="25px">
+                            	   <img class="img-responsive img-circle" src="resources/corlate/images/notice3.png" width="50x" height="25px">
                             </div>
                             <div class="media-body">
                                 <p style="font-weight: bold;">공지 3</p>
@@ -383,7 +383,7 @@
                               <div class="panel-body">
                                   <div class="media accordion-inner">
                                         <div class="pull-left">
-                                           <a href="http://bya-bya.com/220312404377" target="blank"><img class="img-responsive" src="/resources/corlate/images/accodian1.jpg" width="150" height="150"></a>
+                                           <a href="http://bya-bya.com/220312404377" target="blank"><img class="img-responsive" src="resources/corlate/images/accodian1.jpg" width="150" height="150"></a>
                                         </div>
                                         <div class="media-body">
                                              <h5>전세계50개국 배낭여행한 남자가 읽어주는 여행칼럼</h5>
@@ -406,7 +406,7 @@
                             <div id="collapseTwo1" class="panel-collapse collapse" style="background-color: white;">
                                <div class="media accordion-inner" style="margin-top:20px;margin-bottom:15px;margin-right:10px;">
                                      <div class="pull-left" >
-                                       <a href="http://m.post.naver.com/viewer/postView.nhn?volumeNo=25087&memberNo=174998&vType=VERTICAL"  target="blank"><img class="img-responsive" src="/resources/corlate/images/accodian2.jpg" width="150" height="150" style="margin-top:5px;margin-left: 10px;"></a>
+                                       <a href="http://m.post.naver.com/viewer/postView.nhn?volumeNo=25087&memberNo=174998&vType=VERTICAL"  target="blank"><img class="img-responsive" src="resources/corlate/images/accodian2.jpg" width="150" height="150" style="margin-top:5px;margin-left: 10px;"></a>
                                       </div>
                                     <div class="media-body" >
                                         <h5>여행칼럼 '걸으며 생각하며'</h5><br>'행복한 마음'이란 뜻을가진 딜쿠샤의 전경을 배경으로한 여행작가 문일식의 여행칼럼입니다.<br>
@@ -426,7 +426,7 @@
                             </div>
                             <div id="collapseThree1" class="panel-collapse collapse" style="background-color: white;">
                              <div class="pull-left" style="margin-top:20px;margin-bottom:20px;margin-right:15px;">
-                                <a href="http://m.post.naver.com/viewer/postView.nhn?volumeNo=18992&memberNo=1900&vType=VERTICAL"  target="blank"><img class="img-responsive" src="/resources/corlate/images/accodian3.jpg" width="150" height="150" style="margin-top:10px;margin-left: 10px;"></a> 
+                                <a href="http://m.post.naver.com/viewer/postView.nhn?volumeNo=18992&memberNo=1900&vType=VERTICAL"  target="blank"><img class="img-responsive" src="resources/corlate/images/accodian3.jpg" width="150" height="150" style="margin-top:10px;margin-left: 10px;"></a> 
                               </div>
                               <div class="media-body">
                                   <h5> 여행칼럼이 점점 음식으로 흘러가는 것 같습니다.</h5><br> 이전 칼럼에서 음식으로 본 해외여행이라는 주제로 서구 식문화도 재조명해보고 세계여행을 하면서 맛보았던 맛있었던 음식에 관해서도 이야기했었죠. 
@@ -526,11 +526,11 @@
         </div><!--/.container-->
     </section><!--/#services-->
    
-    <script src="/resources/corlate/js/jquery.js"></script>
-    <script src="/resources/corlate/js/bootstrap.min.js"></script>
-    <script src="/resources/corlate/js/jquery.prettyPhoto.js"></script>
-    <script src="/resources/corlate/js/jquery.isotope.min.js"></script>
-    <script src="/resources/corlate/js/main.js"></script>
-    <script src="/resources/corlate/js/wow.min.js"></script>
+    <script src="resources/corlate/js/jquery.js"></script>
+    <script src="resources/corlate/js/bootstrap.min.js"></script>
+    <script src="resources/corlate/js/jquery.prettyPhoto.js"></script>
+    <script src="resources/corlate/js/jquery.isotope.min.js"></script>
+    <script src="resources/corlate/js/main.js"></script>
+    <script src="resources/corlate/js/wow.min.js"></script>
 
 </html>

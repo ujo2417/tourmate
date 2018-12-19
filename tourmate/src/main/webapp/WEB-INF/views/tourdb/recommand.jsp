@@ -17,7 +17,7 @@
 <body>
 <center>
 	<br>
-	<center><img src="/resources/corlate/images/logo/attraction.png" alt="包堡瘤家俺" width="200px" height="180px"></center>
+	<center><img src="resources/corlate/images/logo/attraction.png" alt="包堡瘤家俺" width="200px" height="180px"></center>
 	<!-- search -->
 	<form action="recommand" method="post">
 	<table>

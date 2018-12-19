@@ -7,11 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>mate join list</title>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 </head>
 <body>
 <br>
-<center><img src="/resources/corlate/images/logo/matelogo.png" width="200px" height="180px" /></center>
+<center><img src="resources/corlate/images/logo/matelogo.png" width="200px" height="180px" /></center>
 <br><br>
 	<table width="800" cellpadding="0" cellspacing="0" border="0" class="type09" align="center" style="margin-bottom:245px;">
 		<tr>

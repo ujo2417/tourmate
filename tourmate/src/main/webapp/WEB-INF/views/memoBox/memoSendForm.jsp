@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>쪽지 보내기 form</title>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 <script type="text/javascript">
 function AjaxEx(){
@@ -85,7 +85,7 @@ function checkForm() {
 
 		<br>
 		<div class="center wow fadeInDown">
-			<img src="/resources/corlate/images/logo/writelogo.png" width="200px"
+			<img src="resources/corlate/images/logo/writelogo.png" width="200px"
 				height="180px" />
 
 		</div>

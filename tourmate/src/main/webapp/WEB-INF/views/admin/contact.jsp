@@ -7,14 +7,14 @@
 <title>Contact</title>
 <link rel="stylesheet" href="resources/contact/css/style.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="/resources/contact/js/jquery.banner.js"></script>
-<script src="/resources/contact/js/script.js"></script>
+<script src="resources/contact/js/jquery.banner.js"></script>
+<script src="resources/contact/js/script.js"></script>
 </head>
 <body>
  	<div id="image_list_2">
  	<center><br><br>
 		<div class="clsBannerScreen">
-			<div class="images"><img src="${pageContext.request.contextPath}/resources/contact/contactImage/jeju.JPG"
+			<div class="images"><img src="resources/contact/contactImage/jeju.JPG"
             alt="contactImg" width="300" height="350"></div>
 		</div>
 	</center>

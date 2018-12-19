@@ -35,7 +35,7 @@
 		<section id="recent-works">
 		<div class="container">
 			<div class="center wow fadeInDown">
-				<img src="/resources/corlate/images/logo/matelogo.png" width="200px"
+				<img src="resources/corlate/images/logo/matelogo.png" width="200px"
 					height="180px" />
 
 				<p class="lead"></p>
@@ -66,19 +66,19 @@
                             </h5><br>
                             <h4 class="media-heading">
                             작성자&nbsp;:&nbsp;<c:if test="${dto.mem_grade <= 100 && dto.mem_grade>=0}">
-						<img src="/resources/grade/grade1.jpg" >
+						<img src="resources/grade/grade1.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>100 && dto.mem_grade<=300 }">
-						<img src="/resources/grade/grade2.jpg" >
+						<img src="resources/grade/grade2.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>300 && dto.mem_grade<1000 }">
-						<img src="/resources/grade/grade3.jpg" >
+						<img src="resources/grade/grade3.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>1000 && dto.mem_grade<2500 }">
-						<img src="/resources/grade/grade4.jpg" >
+						<img src="resources/grade/grade4.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>2500}">
-						<img src="/resources/grade/grade5.jpg" >
+						<img src="resources/grade/grade5.jpg" >
 					</c:if>${dto.mem_id }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모집인원&nbsp;:&nbsp;${dto.mate_present }/${dto.mate_max }
                             </h4><br>
                             <h5 class="media-heading">

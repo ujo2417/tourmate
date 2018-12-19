@@ -128,27 +128,4 @@
    <select id="memberview_user" resultType="com.to.me.dto.UserBoardDTO">
    SELECT MEM_ID, USER_NUM, USER_TITLE, USER_DATE FROM USERBOARD WHERE MEM_ID=#{mem_id, jdbcType=VARCHAR}
    </select>
-   
-   <!-- 회원탈퇴 시 모든 게시글 정보 삭제 -->
-   <delete id="freeDelete">
-		delete from freeboard where mem_id = #{mem_id}
-	</delete>
-	<delete id="freereplyDelete">
-		delete from freeboardreply where mem_id = #{mem_id}
-	</delete>
-	<delete id="userDelete">
-		delete from userboard where mem_id = #{mem_id}
-	</delete>
-	<delete id="userreplyDelete">
-		delete from userboardreply where mem_id = #{mem_id}
-	</delete>
-	<delete id="mateDelete">
-		delete from mateboard where mem_id = #{mem_id}
-	</delete>
-	<delete id="matereplyDelete">
-		delete from mateboardreply where mem_id = #{mem_id}
-	</delete>
-	<delete id="matememberDelete">
-		delete from matemember where mem_id = #{mem_id}
-	</delete>
 </mapper>

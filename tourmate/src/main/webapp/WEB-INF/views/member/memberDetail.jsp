@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>member detail</title>

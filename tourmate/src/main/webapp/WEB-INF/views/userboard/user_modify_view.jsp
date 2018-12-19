@@ -28,7 +28,7 @@
 
 <!-- 스마트 에디터 시작 -->
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" ></script>
-<script type="text/javascript" src="/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(function(){
     //전역변수
@@ -37,7 +37,7 @@ $(function(){
     nhn.husky.EZCreator.createInIFrame({
         oAppRef: obj,
         elPlaceHolder: "user_content",      /* 스마트 에디터 적용할 textarea id 값 */
-        sSkinURI: "/resources/editor/SmartEditor2Skin.html", 
+        sSkinURI: "resources/editor/SmartEditor2Skin.html", 
         htParams : {
             // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
             bUseToolbar : true,             
@@ -57,7 +57,7 @@ $(function(){
 })
 </script>
 <!-- 스마트 에디터 끝 -->
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 </head>
 
@@ -66,7 +66,7 @@ $(function(){
 <br><br><br>
  <div class="center wow fadeInDown">
    
-             <img src="/resources/corlate/images/logo/updatelogo.png" width="200px" height="180px" />
+             <img src="resources/corlate/images/logo/updatelogo.png" width="200px" height="180px" />
             <h2>Epilouge</h2>
             </div>
 	 

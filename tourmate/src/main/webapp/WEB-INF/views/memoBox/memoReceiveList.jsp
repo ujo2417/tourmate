@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>받은 쪽지함</title>
@@ -38,7 +38,7 @@ function checkForm() {
 		<br>
 		<br>
 		<div class="center wow fadeInDown">
-			<img src="/resources/corlate/images/logo/mailboxlogo.png" width="100px"
+			<img src="resources/corlate/images/logo/mailboxlogo.png" width="100px"
 				height="80px" />
 
 			<h3>읽지않음(${memoReceiveCount })</h3>

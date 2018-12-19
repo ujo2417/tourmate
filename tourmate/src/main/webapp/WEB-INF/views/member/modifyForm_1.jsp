@@ -9,8 +9,8 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/resources/joinform/js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="/resources/joinform/css/style.css" />
+    <script src="resources/joinform/js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="resources/joinform/css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
 
 <script language="JavaScript">

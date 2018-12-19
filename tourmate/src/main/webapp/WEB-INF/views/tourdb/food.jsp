@@ -16,7 +16,7 @@
 <body>
 <center>
 	<br>
-	<center><img src="/resources/corlate/images/logo/foodlogo.png" alt="음식점소개" width="180px" height="160px"></center>
+	<center><img src="resources/corlate/images/logo/foodlogo.png" alt="음식점소개" width="180px" height="160px"></center>
 	<!-- search -->
 	<form action="food" method="post">
 	<table>

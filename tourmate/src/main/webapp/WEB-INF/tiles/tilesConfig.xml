@@ -291,9 +291,6 @@
  <definition name="admincustomerlist" extends="index">
  	<put-attribute name="center" value="/WEB-INF/views/admin/admincustomerlist.jsp"></put-attribute>
  </definition>
- <definition name="adminsearchlist" extends="index">
- 	<put-attribute name="center" value="/WEB-INF/views/admin/adminsearchlist.jsp"></put-attribute>
- </definition>
  <definition name="adminModifyForm" extends="index">
  	<put-attribute name="center" value="/WEB-INF/views/admin/adminModifyForm.jsp"></put-attribute>
  </definition>

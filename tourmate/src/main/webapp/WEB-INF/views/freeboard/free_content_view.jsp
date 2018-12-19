@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 <script language="javascript">
 <!--
 	function begin() {
@@ -48,7 +48,7 @@
 
 		 <br><br><br>
 	  <div class="center wow fadeInDown">
-              <center> <img src="/resources/corlate/images/logo/communitylogo.png" width="170px" height="150px" /></center>
+              <center> <img src="resources/corlate/images/logo/communitylogo.png" width="170px" height="150px" /></center>
                
             </div>
 	 
@@ -143,19 +143,19 @@
                             <div class="media-body post_reply_comments">
                                 <h3 style="text-align: left">
 					<c:if test="${re_dto.mem_grade <= 100 && re_dto.mem_grade>=0}">
-						<img src="/resources/grade/grade1.jpg" >
+						<img src="resources/grade/grade1.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>100 && re_dto.mem_grade<=300 }">
-						<img src="/resources/grade/grade2.jpg" >
+						<img src="resources/grade/grade2.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>300 && re_dto.mem_grade<1000 }">
-						<img src="/resources/grade/grade3.jpg" >
+						<img src="resources/grade/grade3.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>1000 && re_dto.mem_grade<2500 }">
-						<img src="/resources/grade/grade4.jpg" >
+						<img src="resources/grade/grade4.jpg" >
 					</c:if>
 					<c:if test="${re_dto.mem_grade>2500}">
-						<img src="/resources/grade/grade5.jpg" >
+						<img src="resources/grade/grade5.jpg" >
 					</c:if>${re_dto.mem_id }</h3>
                                 <h4 style="text-align: left">${re_dto.re_writedate}</h4>
                                 <h5 style="text-align: left">${re_dto.re_content}</h5>

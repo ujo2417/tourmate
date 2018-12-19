@@ -10,21 +10,21 @@
     <title>TOur MatE</title>
 	
 	<!-- core CSS -->
-    <link href="/resources/corlate/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/animate.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/resources/corlate/css/main.css" rel="stylesheet">
-    <link href="/resources/corlate/css/responsive.css" rel="stylesheet">
+    <link href="resources/corlate/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/animate.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/prettyPhoto.css" rel="stylesheet">
+    <link href="resources/corlate/css/main.css" rel="stylesheet">
+    <link href="resources/corlate/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 
@@ -96,7 +96,7 @@
                               <div class="panel-body">
                                   <div class="media accordion-inner">
                                         <div class="pull-left">
-                                            <img class="img-responsive" src="/resources/corlate/images/accordion1.png">
+                                            <img class="img-responsive" src="resources/corlate/images/accordion1.png">
                                         </div>
                                         <div class="media-body">
                                              <h4>Adipisicing elit</h4>
@@ -161,10 +161,10 @@
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#middle-->
-    <script src="/resources/corlate/js/jquery.js"></script>
-    <script src="/resources/corlate/js/bootstrap.min.js"></script>
-    <script src="/resources/corlate/js/jquery.prettyPhoto.js"></script>
-    <script src="/resources/corlate/js/jquery.isotope.min.js"></script>
-    <script src="/resources/corlate/js/main.js"></script>
-    <script src="/resources/corlate/js/wow.min.js"></script>
+    <script src="resources/corlate/js/jquery.js"></script>
+    <script src="resources/corlate/js/bootstrap.min.js"></script>
+    <script src="resources/corlate/js/jquery.prettyPhoto.js"></script>
+    <script src="resources/corlate/js/jquery.isotope.min.js"></script>
+    <script src="resources/corlate/js/main.js"></script>
+    <script src="resources/corlate/js/wow.min.js"></script>
     </body>

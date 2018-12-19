@@ -7,11 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>투어메이트 게시판 내 후기 보기</title>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 </head>
 <body>
 <br><center>
-<img src="/resources/corlate/images/logo/mytourmateviewlogo.png" width="200px" height="180px" />
+<img src="resources/corlate/images/logo/mytourmateviewlogo.png" width="200px" height="180px" />
 </center><br><br>
 <table border="0" align="center" style="text-align: center;margin-bottom:180px;">
 	<tr>

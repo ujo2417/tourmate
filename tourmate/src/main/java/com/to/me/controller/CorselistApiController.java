@@ -65,11 +65,11 @@ public class CorselistApiController {
 		String queryUrl = null;
 		
 		if (areaCode == null) {
-			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=acVUDTozqIan1T%2F%2FIESGv6YNzLKA7rgLuNxBEhOPfOmz1hLFWCYyWrF4Y3tMYr6sXTyIdy6JBSpWzmv0dtEySA%3D%3D&contentTypeId=25&areaCode=1&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo=1&_type=json";
+			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=M1NUoihSSsZ9%2BQvM3vTtuZznst%2BRwH37Q%2BF4%2F1FsYHLq%2F9cuXRYsInAnEMjNxqVU8Y4SsXvmqkgxUSGtjF5%2BtA%3D%3D&contentTypeId=25&areaCode=1&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo=1&_type=json";
 		} else if (areaCode != null && pageNo != null) {
-			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=acVUDTozqIan1T%2F%2FIESGv6YNzLKA7rgLuNxBEhOPfOmz1hLFWCYyWrF4Y3tMYr6sXTyIdy6JBSpWzmv0dtEySA%3D%3D&contentTypeId=25&areaCode="+areaCode+"&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo="+pageNo+"&_type=json";
+			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=M1NUoihSSsZ9%2BQvM3vTtuZznst%2BRwH37Q%2BF4%2F1FsYHLq%2F9cuXRYsInAnEMjNxqVU8Y4SsXvmqkgxUSGtjF5%2BtA%3D%3D&contentTypeId=25&areaCode="+areaCode+"&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo="+pageNo+"&_type=json";
 		} else if (areaCode != null && pageNo == null) {
-			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=acVUDTozqIan1T%2F%2FIESGv6YNzLKA7rgLuNxBEhOPfOmz1hLFWCYyWrF4Y3tMYr6sXTyIdy6JBSpWzmv0dtEySA%3D%3D&contentTypeId=25&areaCode="+areaCode+"&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo=1&_type=json";
+			queryUrl = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=M1NUoihSSsZ9%2BQvM3vTtuZznst%2BRwH37Q%2BF4%2F1FsYHLq%2F9cuXRYsInAnEMjNxqVU8Y4SsXvmqkgxUSGtjF5%2BtA%3D%3D&contentTypeId=25&areaCode="+areaCode+"&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=12&pageNo=1&_type=json";
 		}
 
 		URL url = new URL(queryUrl);

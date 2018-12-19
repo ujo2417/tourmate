@@ -217,7 +217,6 @@ System.out.println("modifyOk()");
 		return "login";
 	}
 
-	// 회원삭제
 	@RequestMapping("/memberDelete")
 	public String memberDelete(HttpServletRequest request, MemberDTO dto,
 			Model model, HttpSession session) {
@@ -233,15 +232,6 @@ System.out.println("modifyOk()");
 		
 		//String mem_id = request.getParameter("mem_id");
 		sqlSession.delete("memberDelete", mem_id);
-		
-		sqlSession.delete("freeDelete", mem_id);
-		sqlSession.delete("freereplyDelete", mem_id);
-		sqlSession.delete("userDelete", mem_id);
-		sqlSession.delete("userreplyDelete", mem_id);
-		sqlSession.delete("mateDelete", mem_id);
-		sqlSession.delete("matereplyDelete", mem_id);
-		sqlSession.delete("matememberDelete", mem_id);
-		
 		session.invalidate();
 		return "login";
 	}

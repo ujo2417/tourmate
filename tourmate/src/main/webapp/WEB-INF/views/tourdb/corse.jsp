@@ -16,7 +16,7 @@
 <body>
 <center>
 	<br>
-	<center><img src="/resources/corlate/images/logo/tourcourselogo.png" alt="内胶家俺" width="200px" height="180px"></center>
+	<center><img src="resources/corlate/images/logo/tourcourselogo.png" alt="内胶家俺" width="200px" height="180px"></center>
 	<!-- search -->
 	<form action="corse" method="post">
 	<table>

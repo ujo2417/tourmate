@@ -1,6 +1,5 @@
 package com.to.me.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,9 +25,10 @@ public class IndexController {
 	@RequestMapping("/index")
 	public String process(Model model, HttpSession session) {
 		System.out.println("process()");
-		
-		
-		InvestigationDTO Investigation_list = sqlSession.selectOne("investigationResult");
+		System.out.println(sqlSession);
+		InvestigationDTO Investigation_list = new InvestigationDTO();
+		Investigation_list = sqlSession.selectOne("investigationResult");
+		System.out.println("Investigation_list : " + Investigation_list);
 		int total = Investigation_list.getCol1() + Investigation_list.getCol2() + Investigation_list.getCol3() + Investigation_list.getCol4();
 		String format = "#.#";
 		java.text.DecimalFormat df = new java.text.DecimalFormat(format);

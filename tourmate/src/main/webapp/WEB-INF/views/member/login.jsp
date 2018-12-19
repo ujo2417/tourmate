@@ -17,7 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 <meta name="keywords"
 	content="User Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
-<link href="/resources/web/css/style.css" rel='stylesheet'
+<link href="resources/web/css/style.css" rel='stylesheet'
 	type='text/css' />
 <!--web-fonts-->
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700'
@@ -60,8 +60,8 @@ function popupPWD(url){
 	<c:if test="${empty sessionScope.mem_id}">
 
 		<!-- <div class="avtar">
-	<img src="/resources/web/images/avtar.png" />
-	<img src="/resources/corlate/images/logo.jpg"  width="450px" height="200px" />
+	<img src="resources/web/images/avtar.png" />
+	<img src="resources/corlate/images/logo.jpg"  width="450px" height="200px" />
 </div> -->
 		<br>
 		<br>

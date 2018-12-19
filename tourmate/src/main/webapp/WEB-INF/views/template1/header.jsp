@@ -7,9 +7,9 @@
 
 <!-- alert 꾸미기 -->
 
-<link rel="stylesheet" href="/resources/alertify/alertify.core.css" />
-<link rel="stylesheet" href="/resources/alertify/alertify.default.css" id="toggleCSS" />
-<script src="/resources/alertify/alertify.min.js"></script>
+<link rel="stylesheet" href="resources/alertify/alertify.core.css" />
+<link rel="stylesheet" href="resources/alertify/alertify.default.css" id="toggleCSS" />
+<script src="resources/alertify/alertify.min.js"></script>
 
 <!-- alert 꾸미기 -->
 
@@ -21,31 +21,31 @@
     <title>TOur MatE</title>
 	
 	<!-- core CSS -->
-    <link href="/resources/corlate/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/animate.min.css" rel="stylesheet">
-    <link href="/resources/corlate/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/resources/corlate/css/main.css" rel="stylesheet">
-    <link href="/resources/corlate/css/responsive.css" rel="stylesheet">
+    <link href="resources/corlate/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/animate.min.css" rel="stylesheet">
+    <link href="resources/corlate/css/prettyPhoto.css" rel="stylesheet">
+    <link href="resources/corlate/css/main.css" rel="stylesheet">
+    <link href="resources/corlate/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="/resources/corlate/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="resources/corlate/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/corlate/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/corlate/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/corlate/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="resources/corlate/images/ico/apple-touch-icon-57-precomposed.png">
 
 
    <!-- Bootstrap Core CSS -->
-    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/resources/bootstrap/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="resources/bootstrap/css/stylish-portfolio.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="resources/bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 </head>
@@ -82,19 +82,19 @@
 
 	<form id="iddesign" name="logout" action="logout.do" method="post">
 		<c:if test="${sessionScope.mem_grade <= 100 && sessionScope.mem_grade >=0}">
-			<img src="/resources/grade/grade1.jpg" >
+			<img src="resources/grade/grade1.jpg" >
 		</c:if>
 		<c:if test="${sessionScope.mem_grade>100 && sessionScope.mem_grade<=300 }">
-			<img src="/resources/grade/grade2.jpg" >
+			<img src="resources/grade/grade2.jpg" >
 		</c:if>
 		<c:if test="${sessionScope.mem_grade>300 && sessionScope.mem_grade<1000 }">
-			<img src="/resources/grade/grade3.jpg" >
+			<img src="resources/grade/grade3.jpg" >
 		</c:if>
 		<c:if test="${sessionScope.mem_grade>1000 && sessionScope.mem_grade<2500 }">
-			<img src="/resources/grade/grade4.jpg" >
+			<img src="resources/grade/grade4.jpg" >
 		</c:if>
 		<c:if test="${sessionScope.mem_grade>2500}">
-			<img src="/resources/grade/grade5.jpg" >
+			<img src="resources/grade/grade5.jpg" >
 		</c:if>
 		<b>
 		<a href="modifyForm">${sessionScope.mem_id}</a>님, 로그인 중 입니다. &nbsp;&nbsp; 
@@ -121,7 +121,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-			<a class="navbar-brand" href="index.html"><img src="/resources/corlate/images/logo.jpg" width="160" height="70" alt="logo"></a>
+			<a class="navbar-brand" href="index.html"><img src="resources/corlate/images/logo.jpg" width="160" height="70" alt="logo"></a>
 	</div>
 				
 	<div class="collapse navbar-collapse navbar-right">
@@ -167,19 +167,19 @@
     </header><!--/header-->
     
     <!-- 
-    <script src="/resources/corlate/js/jquery.js"></script>
-    <script src="/resources/corlate/js/bootstrap.min.js"></script>
-    <script src="/resources/corlate/js/jquery.prettyPhoto.js"></script>
-    <script src="/resources/corlate/js/jquery.isotope.min.js"></script>
-    <script src="/resources/corlate/js/main.js"></script>
-    <script src="/resources/corlate/js/wow.min.js"></script>
+    <script src="resources/corlate/js/jquery.js"></script>
+    <script src="resources/corlate/js/bootstrap.min.js"></script>
+    <script src="resources/corlate/js/jquery.prettyPhoto.js"></script>
+    <script src="resources/corlate/js/jquery.isotope.min.js"></script>
+    <script src="resources/corlate/js/main.js"></script>
+    <script src="resources/corlate/js/wow.min.js"></script>
      -->
  
     <!-- Bootstrap Core JavaScript -->
-    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- /resources/corlate/js/jquery.js -->
-	<script src="/resources/corlate/js/jquery.js"></script>
+	<!-- resources/corlate/js/jquery.js -->
+	<script src="resources/corlate/js/jquery.js"></script>
 
 
 

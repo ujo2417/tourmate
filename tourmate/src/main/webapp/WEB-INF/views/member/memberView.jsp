@@ -31,26 +31,26 @@
 <body>
 <br><br>
 <center>
-<img alt="나의 게시물" src="/resources/corlate/images/logo/mycontentlogo.png" align="middle" width="190px" height="180px" >	
+<img alt="나의 게시물" src="resources/corlate/images/logo/mycontentlogo.png" align="middle" width="190px" height="180px" >	
 <br><br><br><br>
 <table border="0" class="mypagestyle" align="center">
    <tr>
       <td align="center" class="maintd">
-      	 <a href="memberView_free"><img alt="자유게시판내글" src="/resources/corlate/images/logo/communitylogo.png" width="120px" height="100" />
+      	 <a href="memberView_free"><img alt="자유게시판내글" src="resources/corlate/images/logo/communitylogo.png" width="120px" height="100" />
          </a>
       </td>
       
       <td class="tdtdtd" bgcolor="#ffffff">&nbsp;&nbsp;&nbsp;</td>
       
       <td align="center" class="maintd">
-      	  <a href="memberView_user"><img alt="후기게시판내글" src="/resources/corlate/images/logo/epiloguelogo.png" width="120px" height="100" />
+      	  <a href="memberView_user"><img alt="후기게시판내글" src="resources/corlate/images/logo/epiloguelogo.png" width="120px" height="100" />
        </a>
       </td>
       
       <td class="tdtdtd">&nbsp;&nbsp;&nbsp;</td>
       
       <td align="center" class="maintd">
-           <a href="memberView_mate"><img alt="투어메이트 내글" src="/resources/corlate/images/logo/mytourmateviewlogo.png" width="120px" height="100" />
+           <a href="memberView_mate"><img alt="투어메이트 내글" src="resources/corlate/images/logo/mytourmateviewlogo.png" width="120px" height="100" />
         </a>
       </td>
   

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 
 <html>
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 <script type="text/javascript">
 function AjaxEx(){
 var confirm_id = "confirm_id="+document.userinput.mem_id.value;
@@ -163,7 +163,7 @@ function moveCursor(textbox){
 <body>
 	<br>
 	<center>
-		<img src="/resources/corlate/images/logo/joinlogo.png" alt="회원가입" width="200px" height="180px"><br><br>
+		<img src="resources/corlate/images/logo/joinlogo.png" alt="회원가입" width="200px" height="180px"><br><br>
 		<form action="joinOk" method="post" name="userinput" enctype="multipart/form-data"	onsubmit="return checkIt()">
 			
 			<table class="type06_joinform" border="0">

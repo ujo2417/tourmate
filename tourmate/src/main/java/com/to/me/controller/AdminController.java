@@ -34,34 +34,12 @@ public class AdminController {
 	// 관리자 회원관리 리스트
 	public String adminOk(MemberDTO dto, Model model, HttpSession session) {
 		System.out.println("adminOk()");
-		System.out.println("???");
-		model.addAttribute("adminList", sqlSession.selectList("adminList"));
+
+		model.addAttribute("adminList", sqlSession.selectList("adminList", dto));
 		String mem_id = (String)session.getAttribute("mem_id");
-		model.addAttribute("count",sqlSession.selectOne("mem_count"));
+		
 		model.addAttribute(mem_id);
 		return "admincustomerlist";
-	}
-	
-	@RequestMapping("/adminSearchlist")
-	// 관리자 회원관리 검색리스트
-	public String adminsearch(HttpServletRequest request, MemberDTO dto, Model model, HttpSession session) {
-		System.out.println("adminsearch()");
-		String memid= request.getParameter("memid");
-		String memname=request.getParameter("memname");
-		String mem_id = (String)session.getAttribute("mem_id");
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("memid", memid);
-		map.put("memname", memname);
-		if(memid.length()>0){
-			model.addAttribute("adminList", sqlSession.selectList("mem_id_searchlist", map));
-			model.addAttribute("count",sqlSession.selectOne("mem_id_searchcount", map));
-		}
-		if(memname.length()>0){
-			model.addAttribute("adminList", sqlSession.selectList("mem_name_searchlist", map));
-			model.addAttribute("count",sqlSession.selectOne("mem_name_searchcount", map));
-		}
-		model.addAttribute(mem_id);
-		return "adminsearchlist";
 	}
 
 	@RequestMapping("/adminmodifyForm")
@@ -99,15 +77,6 @@ public class AdminController {
 		System.out.println("adminmemberDelete()");
 		String mem_id = request.getParameter("mem_id");
 		sqlSession.delete("memberDelete", mem_id);
-		
-		sqlSession.delete("freeDelete", mem_id);
-		sqlSession.delete("freereplyDelete", mem_id);
-		sqlSession.delete("userDelete", mem_id);
-		sqlSession.delete("userreplyDelete", mem_id);
-		sqlSession.delete("mateDelete", mem_id);
-		sqlSession.delete("matereplyDelete", mem_id);
-		sqlSession.delete("matememberDelete", mem_id);
-		
 		session.invalidate();
 		return "redirect:adminpage";
 	}

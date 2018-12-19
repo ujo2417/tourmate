@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 
 <title>searchlist</title>
@@ -21,7 +21,7 @@
 		<section id="recent-works">
 		<div class="container">
 			<div class="center wow fadeInDown">
-				<img src="/resources/corlate/images/logo/matelogo.png" width="200px"
+				<img src="resources/corlate/images/logo/matelogo.png" width="200px"
 					height="180px" />
 
 				<p class="lead"></p>

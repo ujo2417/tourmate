@@ -2,6 +2,10 @@ package com.to.me.dto;
 
 public class InvestigationDTO {
 	int col1, col2, col3, col4;
+	
+	
+
+	public InvestigationDTO() {	}
 
 	public int getCol1() {
 		return col1;
@@ -33,6 +37,11 @@ public class InvestigationDTO {
 
 	public void setCol4(int col4) {
 		this.col4 = col4;
+	}
+
+	@Override
+	public String toString() {
+		return "InvestigationDTO [col1=" + col1 + ", col2=" + col2 + ", col3=" + col3 + ", col4=" + col4 + "]";
 	}
 	
 	

@@ -21,7 +21,7 @@
 </head>
 <body>
 		<br>
-		<center><img src="/resources/corlate/images/logo/foodlogo.png" alt="음식점소개" width="180px" height="160px"></center>
+		<center><img src="resources/corlate/images/logo/foodlogo.png" alt="음식점소개" width="180px" height="160px"></center>
 	<hr color="gray">
 		<table border="0" align="center" style="margin:100px 200px 100px 200px">
 			

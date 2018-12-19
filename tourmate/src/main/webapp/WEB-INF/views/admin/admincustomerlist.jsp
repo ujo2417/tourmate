@@ -14,51 +14,10 @@
 				return false;
 			}
 	}
-	function openSearch() {
-        if(search.subject.value==""){
-           alertify.alert("검색어를 입력하세요.");
-           return;
-        }
-     }
 </script>
-
 </head>
 <body>
 <h3>admin 회원관리 게시판</h3>
-<h6><b>회원 목록 : ${ count }</b></h6>
-<table>
-	<tr>
-		<td>
-    		<select name="select" class="searchSelect">
-	          	<option value="id">아이디</option>
-	          	<option value="name">이름</option>
-        	</select>
-        </td>
-		<td>
-			<form action="adminSearchlist" name="search" onSubmit="return openSearch()">
-            <input  id="hrid1" type="text" name="memid" placeholder="아이디를 검색 하세요">
-            <input  id="hrid2" type="text" name="memname" placeholder="이름을 검색 하세요">
-            <input class="button" type="submit" value="검색">
-			</form>
-		</td>
-	</tr>
-</table>
-<script type="text/javascript">
-	$(function () {
-		$("input[name='memname']").attr("type" , "hidden");
-	});
-	 $('.searchSelect').change(function () {
-		if ($('select option:selected').val() == "id") {
-			$("input[name='memid']").attr("type" , "text");
-			$("input[name='memname']").attr("type" , "hidden");
-		}
-		if ($('select option:selected').val() == "name") {
-			$("input[name='memid']").attr("type" , "hidden");
-			$("input[name='memname']").attr("type" , "text");
-		}
-		
-	}); 
-</script>
 <table border="1" width="100%">
 		<tr>
 			<td>아이디</td>
@@ -69,7 +28,7 @@
 			<td>성별</td>
 			<td>생년월일</td>
 			<td>연락처</td>
-			<td>이메일</td>
+			<td>이메일</td>2
 			<td>주소</td>
 			<td>수정</td>
 			<td>삭제</td>

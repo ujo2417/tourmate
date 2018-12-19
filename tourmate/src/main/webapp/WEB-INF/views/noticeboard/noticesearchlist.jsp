@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 
 <title>searchlist</title>
@@ -22,7 +22,7 @@
 		<section id="recent-works">
 		<div class="container">
 			<div class="center wow fadeInDown">
-			<img src="/resources/corlate/images/logo/communitylogo.png" width="200px" height="180px" />
+			<img src="resources/corlate/images/logo/communitylogo.png" width="200px" height="180px" />
 				<p class="lead">자유롭게, 즐겁게, 대화를 나주세요.</p>
 			</div>
 		</div>
@@ -44,19 +44,19 @@
 							<tr>
 								<td align="center">${dto.notice_num}</td>
 								<td align="center"><c:if test="${dto.mem_grade <= 100}">
-						<img src="/resources/grade/grade1.jpg" >
+						<img src="resources/grade/grade1.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>100 && dto.mem_grade<=300 }">
-						<img src="/resources/grade/grade2.jpg" >
+						<img src="resources/grade/grade2.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>300 && dto.mem_grade<1000 }">
-						<img src="/resources/grade/grade3.jpg" >
+						<img src="resources/grade/grade3.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>1000 && dto.mem_grade<2500 }">
-						<img src="/resources/grade/grade4.jpg" >
+						<img src="resources/grade/grade4.jpg" >
 					</c:if>
 					<c:if test="${dto.mem_grade>2500}">
-						<img src="/resources/grade/grade5.jpg" >
+						<img src="resources/grade/grade5.jpg" >
 					</c:if>${dto.mem_id }</td>
 								<td align="center"><a
 									href="noticecontentview?notice_num=${dto.notice_num}">${dto.notice_title}&nbsp;

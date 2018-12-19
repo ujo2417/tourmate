@@ -153,7 +153,7 @@
 			<section id="recent-works">
        		 <div class="container">
             <div class="center wow fadeInDown">
-            <img src="/resources/corlate/images/logo/epiloguelogo.png" width="200px" height="180px" />
+            <img src="resources/corlate/images/logo/epiloguelogo.png" width="200px" height="180px" />
             
                 <p class="lead">감동의 순간을 우리 모두 함께 해요</p>
             </div>
@@ -175,7 +175,7 @@
                             	작성자 : ${dto.mem_id }<br>
                                 	작성일 : ${dto.user_date}<br>
                                 	조회수 : ${dto.user_readcount}<br>
-                               <!--  /resources/corlate/images/portfolio/full/item1.png -->
+                               <!--  resources/corlate/images/portfolio/full/item1.png -->
                              
                             </div> 
                         </div>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="/resources/css/table.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 <title>보낸 쪽지함</title>
 </head>
@@ -15,7 +15,7 @@
 		<br>
 		<br>
 		<div class="center wow fadeInDown">
-			<img src="/resources/corlate/images/logo/mailboxlogo.png" width="100px"
+			<img src="resources/corlate/images/logo/mailboxlogo.png" width="100px"
 				height="80px" />
 
 			<h3>보낸편지함</h3>
