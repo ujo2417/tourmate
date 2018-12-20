@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ var confirm_id = "confirm_id="+document.userinput.mem_id.value;
 
 $.ajax({
 	
-	url : "/confirmId",
+	url : "confirmId",
 	type : "post",
 	data : confirm_id,
 	dataType : "json",
