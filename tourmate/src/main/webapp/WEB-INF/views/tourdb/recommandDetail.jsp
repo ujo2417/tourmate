@@ -65,51 +65,53 @@
 				<td colspan="2">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="font-size: 14px;"><hr> <font
-					style="font-size: 16px; font-weight: bold; color: navy;">&nbsp;&nbsp;&nbsp;
+				<td colspan="2" style="font-size: 14px;">
+				<hr> 
+				<font style="font-size: 16px; font-weight: bold; color: navy;">&nbsp;&nbsp;&nbsp;
 						&loz;소개</font> <br>
 				<br>${rdlist.getOverview()}</td>
 			</tr>
 		</c:forEach>
 		
-				  <tr><td colspan="2">&nbsp;</td></tr> <tr><td colspan="2">&nbsp;</td></tr>
-			<tr><td>
-			<div id="map" style="width:500px;height:350px;"></div>
-
-	<div id="clickLatlng"></div>
-
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=667ad238388d91f9d4a3e7b2924c45a3"></script>
-<c:set var="mapy" value="${mapy}" />
-<c:set var="mapx" value="${mapx}" />
-
-<script>
-
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-	
-        center: new daum.maps.LatLng(<c:out value="${mapy}" />, <c:out value="${mapx}" />), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
-var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-// 지도를 클릭한 위치에 표출할 마커입니다
-var marker = new daum.maps.Marker({ 
-    // 지도 중심좌표에 마커를 생성합니다 
-    position: map.getCenter() 
-}); 
-// 지도에 마커를 표시합니다
-marker.setMap(map);
-
-// 지도에 클릭 이벤트를 등록합니다
-// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
-daum.maps.event.addListener(map, 'click', function(mouseEvent) {        
-  
-    
-});
-</script>
-</td>
+			<tr><td colspan="2">&nbsp;</td></tr> <tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td align="center">
+			<div id="map" style="width:500px;height:350px;" align="center"></div>
+			
+			</td>
 			</tr>
 	</table>
+	<div id="clickLatlng"></div>
+
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb4fc8d3b1c4c4602c5256f168a11e0d"></script>
+		<c:set var="mapy" value="${mapy}" />
+		<c:set var="mapx" value="${mapx}" />
+		
+		<script>
+		
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+			
+		        center: new daum.maps.LatLng(<c:out value="${mapy}"/>, <c:out value="${mapx}"/>), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+		var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		
+		// 지도를 클릭한 위치에 표출할 마커입니다
+		var marker = new daum.maps.Marker({ 
+		    // 지도 중심좌표에 마커를 생성합니다 
+		    position: map.getCenter() 
+		}); 
+		// 지도에 마커를 표시합니다
+		marker.setMap(map);
+		
+		// 지도에 클릭 이벤트를 등록합니다
+		// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+		daum.maps.event.addListener(map, 'click', function(mouseEvent) {        
+		  
+		    
+		});
+		</script>
+			
 
 	
 	

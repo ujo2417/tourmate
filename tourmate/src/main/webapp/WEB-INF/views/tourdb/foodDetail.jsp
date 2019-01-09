@@ -58,9 +58,11 @@
 				</c:forEach>
 				</td>
 			</tr>
-			<tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
 			<tr>
-				<td colspan="2"  style="font-size:14px;"><hr>
+				<td colspan="2"  style="font-size:14px;">
+				<hr>
 				<font style="font-size:16px; font-weight:bold;color: navy;">&nbsp;&nbsp;&nbsp; &loz;¼Ò°³</font>
 				<br><br>${fdlist.getOverview()}</td>
 			</tr>
@@ -68,11 +70,11 @@
 		  <tr><td colspan="2">&nbsp;</td></tr> <tr><td colspan="2">&nbsp;</td></tr>
 			<tr>
 				<td >
-						<div id="map" style="width:600px;height:350px;"></div>
+						<div id="map" style="width:500px;height:350px;"></div>
 						
 						<div id="clickLatlng"></div>
 						
-						<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=667ad238388d91f9d4a3e7b2924c45a3"></script>
+						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb4fc8d3b1c4c4602c5256f168a11e0d"></script>
 						<c:set var="mapy" value="${mapy}" />
 						<c:set var="mapx" value="${mapx}" />
 						
